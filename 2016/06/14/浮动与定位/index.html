@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>浮动和定位 | 行走在web路上</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="###浮动和定位
+###浮动
+浮动，将元素从文档的正常流中删除，但仍影响布局。
+元素浮动时，其他内容会”环绕”该元素。
+浮动元素周围的外边距不合并。
+
+行内框与浮动元素重叠时，边框、背景和内容都在浮动元素 之上显示。
+块框与浮动元素重叠时，边框和背景在浮动元素 之下显示，内容在浮动元素 之上
+
+float:none 阻止元素浮动
+浮动行内非替换元素时，需要设置width,否则元素宽度趋向于0
+浮动">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浮动和定位">
+<meta property="og:url" content="http://yoursite.com/2016/06/14/浮动与定位/index.html">
+<meta property="og:site_name" content="行走在web路上">
+<meta property="og:description" content="###浮动和定位
+###浮动
+浮动，将元素从文档的正常流中删除，但仍影响布局。
+元素浮动时，其他内容会”环绕”该元素。
+浮动元素周围的外边距不合并。
+
+行内框与浮动元素重叠时，边框、背景和内容都在浮动元素 之上显示。
+块框与浮动元素重叠时，边框和背景在浮动元素 之下显示，内容在浮动元素 之上
+
+float:none 阻止元素浮动
+浮动行内非替换元素时，需要设置width,否则元素宽度趋向于0
+浮动">
+<meta property="og:updated_time" content="2016-06-14T16:23:06.193Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="浮动和定位">
+<meta name="twitter:description" content="###浮动和定位
+###浮动
+浮动，将元素从文档的正常流中删除，但仍影响布局。
+元素浮动时，其他内容会”环绕”该元素。
+浮动元素周围的外边距不合并。
+
+行内框与浮动元素重叠时，边框、背景和内容都在浮动元素 之上显示。
+块框与浮动元素重叠时，边框和背景在浮动元素 之下显示，内容在浮动元素 之上
+
+float:none 阻止元素浮动
+浮动行内非替换元素时，需要设置width,否则元素宽度趋向于0
+浮动">
+  
+    <link rel="alternative" href="/atom.xml" title="行走在web路上" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<script type="text/javascript">
+
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?a0f8b1403df03f16fcb98d796cec71de";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="F:/ghblog/favicon.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">TalkLee</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">写下不成熟的东西，才能看到成熟的希望</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="#" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/API探究/" style="font-size: 10px;">API探究</a> <a href="/tags/JavaScript-语法/" style="font-size: 10px;">JavaScript 语法</a> <a href="/tags/JavaScript语法/" style="font-size: 15px;">JavaScript语法</a> <a href="/tags/ejs/" style="font-size: 10px;">ejs</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/sass/" style="font-size: 10px;">sass</a> <a href="/tags/前端工具/" style="font-size: 10px;">前端工具</a> <a href="/tags/工作进度记录/" style="font-size: 10px;">工作进度记录</a> <a href="/tags/每日一博/" style="font-size: 20px;">每日一博</a> <a href="/tags/浏览器工作原理/" style="font-size: 10px;">浏览器工作原理</a> <a href="/tags/经典布局样式/" style="font-size: 10px;">经典布局样式</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">TalkLee</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="F:/ghblog/favicon.png" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">TalkLee</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">写下不成熟的东西，才能看到成熟的希望</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-浮动与定位" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/14/浮动与定位/" class="article-date">
+  	<time datetime="2016-06-14T12:35:00.000Z" itemprop="datePublished">2016-06-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      浮动和定位
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>###浮动和定位</p>
+<p>###浮动</p>
+<p>浮动，将元素从文档的正常流中删除，但仍影响布局。</p>
+<p>元素浮动时，其他内容会”环绕”该元素。</p>
+<p>浮动元素周围的外边距不合并。</p>
+<ul>
+<li>行内框与浮动元素重叠时，边框、背景和内容都在浮动元素 <strong>之上</strong>显示。</li>
+<li>块框与浮动元素重叠时，边框和背景在浮动元素 <strong>之下</strong>显示，内容在浮动元素 <strong>之上</strong></li>
+</ul>
+<p>float:none 阻止元素浮动</p>
+<p>浮动行内非替换元素时，需要设置width,否则元素宽度趋向于0</p>
+<p>浮动元素包含块时其最近块级祖先元素.</p>
+<p>浮动元素自动生成为块级框？？display设置无效</p>
+<p>浮动元素之间不会彼此覆盖或者重叠</p>
+<p>如果浮动元素之前还有一个元素，浮动元素顶部不能超过该元素生成框的任何行框，<br>即浮动元素低于前一个元素的最低行框</p>
+<p>浮动元素自动生成块级框，即只能占据整个行框的一个元素框。当当前行框中存在任何其他元素(文档中之前出现的元素)占据空间时，浮动元素会到下一行进行浮动。<br> 若浮动图片处于一个段落中，则浮动图片最高点只能放在图片所在行框的顶部.<br> <a href="http://jsbin.com/yufoziqavu/1/edit?html,output" target="_blank" rel="external">实例</a></p>
+<p>清除元素(设置clear属性的元素)为放置被float元素覆盖，会落在float元素的下边，实际上和设置margin使得元素内容恰好在float元素下面一样。所以给清除元素添加 <strong>上外边距</strong>没有意义。</p>
+<p>###定位</p>
+<p>position:</p>
+<p>static:<br>行内元素生成一个或多个行框<br>块级元素则生成一个矩形框</p>
+<p>relative:</p>
+<p>相对未设置浮动和定位属性前的位置进行偏移，原本占据空间保留</p>
+<p>absolute:</p>
+<p>脱离正常流，相对于其包含块定位。<br>元素之前在正常流中占据的空间关闭，定位元素生成一个块级框(只能从一个无元素占据空间的行框开始占据空间)</p>
+<p>fixed：</p>
+<p>类似absolute，但包含块为视窗，相对视窗定位。</p>
+<p>包含块(针对定位):</p>
+<p>若position值为relative或static，则包含块为最近的块级框、表单元格、行内快祖先框的内容区构成。</p>
+<p>position值为absolute，则包含块为最近的position为除static以外的其他祖先元素：</p>
+<pre><code>若祖先元素为块级框，则为其内边距边界(以边框作为边界)
+            行内框，则为其内容边界
+</code></pre>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/07/18/background复合属性解析/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          background复合属性解析
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/06/13/对象属性的内部特性/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">对象属性的内部特性</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="浮动与定位" data-title="浮动和定位" data-url="http://yoursite.com/2016/06/14/浮动与定位/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 TalkLee
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>gulp上手 | 行走在web路上</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="gulp配置文件(gulpfile.js)书写介绍:
+ 配置之前需要先安装gulp插件
+ var gulp = require(&amp;apos;gulp&amp;apos;);  //加载gulp及其插件模块
+
+gulp.task(taskName, function() {
+    //task具体执行的行为
+});
+gulp.task(&amp;apos;default&amp;apos;,function() {">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gulp上手">
+<meta property="og:url" content="http://yoursite.com/2016/05/12/gulp上手/index.html">
+<meta property="og:site_name" content="行走在web路上">
+<meta property="og:description" content="gulp配置文件(gulpfile.js)书写介绍:
+ 配置之前需要先安装gulp插件
+ var gulp = require(&amp;apos;gulp&amp;apos;);  //加载gulp及其插件模块
+
+gulp.task(taskName, function() {
+    //task具体执行的行为
+});
+gulp.task(&amp;apos;default&amp;apos;,function() {">
+<meta property="og:updated_time" content="2016-05-13T03:58:44.398Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="gulp上手">
+<meta name="twitter:description" content="gulp配置文件(gulpfile.js)书写介绍:
+ 配置之前需要先安装gulp插件
+ var gulp = require(&amp;apos;gulp&amp;apos;);  //加载gulp及其插件模块
+
+gulp.task(taskName, function() {
+    //task具体执行的行为
+});
+gulp.task(&amp;apos;default&amp;apos;,function() {">
+  
+    <link rel="alternative" href="/atom.xml" title="行走在web路上" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<script type="text/javascript">
+
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?a0f8b1403df03f16fcb98d796cec71de";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="F:/ghblog/favicon.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">TalkLee</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">写下不成熟的东西，才能看到成熟的希望</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="#" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/API探究/" style="font-size: 10px;">API探究</a> <a href="/tags/JavaScript-语法/" style="font-size: 10px;">JavaScript 语法</a> <a href="/tags/JavaScript语法/" style="font-size: 15px;">JavaScript语法</a> <a href="/tags/ejs/" style="font-size: 10px;">ejs</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/sass/" style="font-size: 10px;">sass</a> <a href="/tags/前端工具/" style="font-size: 10px;">前端工具</a> <a href="/tags/工作进度记录/" style="font-size: 10px;">工作进度记录</a> <a href="/tags/每日一博/" style="font-size: 20px;">每日一博</a> <a href="/tags/浏览器工作原理/" style="font-size: 10px;">浏览器工作原理</a> <a href="/tags/经典布局样式/" style="font-size: 10px;">经典布局样式</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">TalkLee</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="F:/ghblog/favicon.png" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">TalkLee</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">写下不成熟的东西，才能看到成熟的希望</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-gulp上手" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/12/gulp上手/" class="article-date">
+  	<time datetime="2016-05-12T14:41:37.000Z" itemprop="datePublished">2016-05-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      gulp上手
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gulp/">gulp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端工具/">前端工具</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>gulp配置文件(gulpfile.js)书写介绍:</p>
+<p> 配置之前需要先安装gulp插件</p>
+<pre><code> var gulp = require(&apos;gulp&apos;);  //加载gulp及其插件模块
+
+gulp.task(taskName, function() {
+    //task具体执行的行为
+});
+gulp.task(&apos;default&apos;,function() {
+    //设置default任务
+    gulp.run(task1,task2,taskn); //设置默认任务需要执行的其他子任务
+    gulp.watch(filename,function() {  //监听指定文件(路径及其文件名)变化，变化时调用回调函数,执行指定任务
+        gulp.run(task1,task2,taskn);
+        })
+    })
+</code></pre><p>配置文件设置完毕,</p>
+<p>命令行使用gulp命令运行gulp.js构建程序运行default任务,或者gulp + taskName 运行指定任务</p>
+<p>常用API：</p>
+<p>gulp.task(name[,deps],fn) :<br>name : 任务名<br>deps : 当前定义任务执行需要依赖的其他任务(数组),效果是依赖任务执行完以后才执行此时定义的任务,可选<br>fn : 任务执行的具体代码,可选</p>
+<pre><code>所有定义的任务之间如果没有依赖，任务会按照定义顺序以此执行，
+但是若依赖的任务是中包含异步操作,依赖主体并不会等到依赖任务的异步操作完成后才执行.
+</code></pre><p>如果task中为异步任务,需要通过调用一个回调函数或者返回一个event stream或promise<br>来提示任务已经完成(写在fn的最后面)</p>
+<p>gulp.watch(glob[,opts],tasks | cb ) :</p>
+<p>glob : 监听的文件(包括路径、后缀)或文件数组<br>tasks : 变化时执行指定任务(数组)<br>cb : 变化时执行的回调函数,传入一个event对象，包括type和path两个属性,表示发生改变的类型(增删改)，触发事件的文件路径</p>
+<p>gulp.dest(path[,options])<br>写入文件<br>path : 导出文件的路径<br>options : 可选参数对象,不常用<br>将pipe的文件写入到指定目录下的文件中,文件夹若不存在则创建之<br>path只能指定导出文件的路径，文件名是由导入到文件流自身的文件名,即生成的文件名是由导入的到该方法的文件流决定的,</p>
+<p>gulp.src(globs[,options])<br>读取文件到流<br>options : 可选参数对象,不常用<br>globs:待读取文件的匹配模式(数组),类似正则表达式匹配,写法参考node-glob写法</p>
+<p>gulp运行流程：<br>先通过src方法返回一个Vinyl file类型的stream,可以通过pipe方法将stream导入到gulp的插件,之后将经过插件处理后的流通过pipe方法导入到gulp.dest()中，dest方法将流生成为导出文件,除此之外还可以将插件处理后的流导入到其他插件中继续处理</p>
+<p>生成的文件路径为dest方法中传入的path路径加上src方法中glob匹配模式中通配符出现后的那部分路径  d，而文件名则由流决定</p>
+<p>###明日更新dest等方法搭配产生的效果</p>
+<p>####Vinyl</p>
+<p>vinyl是一种非常简单的用于描述文件的元数据对象。当我们形容一个文件时,必然包含两个属性: </p>
+<ul>
+<li>path      路径</li>
+<li>contents  内容<br>这也是vinyl的主要属性,<br>除此之外vinyl并不仅仅描述你电脑文件系统中的文件，还可以是云端上的文件。</li>
+</ul>
+<p>####Vinyl 适配器</p>
+<p>vinyl提供了一种简单的表述文件的方式,但我们还需要一种方式去获取这些vinyl表述的文件,每种文件资源都需要vinyl适配器的存在。而vinyl适配器简单暴露了 <strong>src</strong>和 <strong>dest</strong>方法，以上的两个方法均返回一个stream,src方法返回的流(简称src流)产生Vinyl对象，而dest流则消费Vinyl对象。除此以外，Vinyl适配器还暴露了其他一些方法特定与他们的input/output 媒介，例如vinyl-fs提供的symlink方法</p>
+<p>参考文章:<br> <a href="http://www.cnblogs.com/2050/p/4198792.html" target="_blank" rel="external">无双</a><br> <a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md" target="_blank" rel="external">官方API</a><br><a href="https://github.com/isaacs/node-glob" target="_blank" rel="external">node-glob语法</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/05/13/sass-review/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          sass review
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/11/复制数组/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">复制数组</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="gulp上手" data-title="gulp上手" data-url="http://yoursite.com/2016/05/12/gulp上手/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 TalkLee
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

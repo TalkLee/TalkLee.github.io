@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>循环添加下标到事件处理程序正确写法 | 行走在web路上</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="新手常犯错误,循环添加事件处理程序给一组元素，结果添加的对应数值为循环最大值
+&amp;lt;p&amp;gt;产品0&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;产品1&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;产品2&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;产品3&amp;lt;/p&amp;gt;
+JavaScript代码如下:
+var pTeam  = document.getElementsByTagName(&amp;quot;p&amp;qu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="循环添加下标到事件处理程序正确写法">
+<meta property="og:url" content="http://yoursite.com/2016/05/09/循环添加下标到事件处理程序正确写法/index.html">
+<meta property="og:site_name" content="行走在web路上">
+<meta property="og:description" content="新手常犯错误,循环添加事件处理程序给一组元素，结果添加的对应数值为循环最大值
+&amp;lt;p&amp;gt;产品0&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;产品1&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;产品2&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;产品3&amp;lt;/p&amp;gt;
+JavaScript代码如下:
+var pTeam  = document.getElementsByTagName(&amp;quot;p&amp;qu">
+<meta property="og:updated_time" content="2016-05-09T04:54:18.036Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="循环添加下标到事件处理程序正确写法">
+<meta name="twitter:description" content="新手常犯错误,循环添加事件处理程序给一组元素，结果添加的对应数值为循环最大值
+&amp;lt;p&amp;gt;产品0&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;产品1&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;产品2&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;产品3&amp;lt;/p&amp;gt;
+JavaScript代码如下:
+var pTeam  = document.getElementsByTagName(&amp;quot;p&amp;qu">
+  
+    <link rel="alternative" href="/atom.xml" title="行走在web路上" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<script type="text/javascript">
+
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?a0f8b1403df03f16fcb98d796cec71de";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="F:/ghblog/favicon.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">TalkLee</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">写下不成熟的东西，才能看到成熟的希望</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="#" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/API探究/" style="font-size: 10px;">API探究</a> <a href="/tags/JavaScript-语法/" style="font-size: 10px;">JavaScript 语法</a> <a href="/tags/JavaScript语法/" style="font-size: 15px;">JavaScript语法</a> <a href="/tags/ejs/" style="font-size: 10px;">ejs</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/sass/" style="font-size: 10px;">sass</a> <a href="/tags/前端工具/" style="font-size: 10px;">前端工具</a> <a href="/tags/工作进度记录/" style="font-size: 10px;">工作进度记录</a> <a href="/tags/每日一博/" style="font-size: 20px;">每日一博</a> <a href="/tags/浏览器工作原理/" style="font-size: 10px;">浏览器工作原理</a> <a href="/tags/经典布局样式/" style="font-size: 10px;">经典布局样式</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">TalkLee</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="F:/ghblog/favicon.png" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">TalkLee</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">写下不成熟的东西，才能看到成熟的希望</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-循环添加下标到事件处理程序正确写法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/09/循环添加下标到事件处理程序正确写法/" class="article-date">
+  	<time datetime="2016-05-09T04:53:46.000Z" itemprop="datePublished">2016-05-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      循环添加下标到事件处理程序正确写法
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>新手常犯错误,循环添加事件处理程序给一组元素，结果添加的对应数值为循环最大值</p>
+<pre><code>&lt;p&gt;产品0&lt;/p&gt;
+&lt;p&gt;产品1&lt;/p&gt;
+&lt;p&gt;产品2&lt;/p&gt;
+&lt;p&gt;产品3&lt;/p&gt;
+</code></pre><p>JavaScript代码如下:</p>
+<pre><code>var pTeam  = document.getElementsByTagName(&quot;p&quot;);
+for(var i = 0; i &lt; pTeam.length ; i++){
+    pTeam[i].onclick = function() {
+        alert(i);   //点击任意p标签均返回4
+    }
+}
+</code></pre><p>原因:循环时相应函数并未保存i，而是最后一次的值</p>
+<p>解决方法:</p>
+<p>1.变量保存到元素属性中</p>
+<pre><code>for(var i = 0 ; i &lt; pTeam.length ; i++){
+    pTeam[i].i = i;   //保存下标到p元素属性i内
+    pTeam[i].onclick = function () {
+        alert(this.i);   //this此时指向p元素,所以this.i表示访问p元素的i属性
+    }
+}
+</code></pre><p>2.访问事件处理程序调用函数中的i</p>
+<pre><code>for(var i = 0 ; i &lt; pTeam.length ; i++ ){
+    (pTeam[i].onclick = function(){
+        alert(arguments.callee.i);
+    }).i = i ;   //后面这句没看懂...
+}
+</code></pre><p>3.利用闭包，立即执行函数表达式传入下标作为参数，内部事件处理程序根据作用域链找到传入的下标</p>
+<pre><code>for(var i = 0 ; i &lt; pTeam.length ; i++){
+    (function(arg){
+        var j = 10;
+        pTeam[i].onclick = function () {
+            alert(j);
+            alert(arg);
+        }
+    })(i);  //立即调用函数表达式传入下标作为参数,内部函数根据作用域链找到外部作用于中函数的值
+}
+</code></pre><p>4.同样利用闭包，该方法保存下标到外部函数中作为局部变量，根据作用域链找到下标</p>
+<pre><code>for(var i = 0 ; i &lt; pTeam.length ; i++){
+    (function(arg){
+        var temp = i;  //外部函数保存下标，内部函数根据作用域链获取外部函数中保存的下标
+        pTeam[i].onclick = function () {
+            alert(temp);
+        }
+    })();
+}
+</code></pre><p>5.闭包，返回响应函数，外部函数中下标作为参数</p>
+<pre><code>for(var i = 0 ; i &lt; pTeam.length ; i++){
+    pTeam[i].onclick = function(arg){
+        return function() {  //返回响应函数，其中由于闭包获取外部函数传递的下标作为参数
+            alert(arg);
+        }
+    }(i);
+}
+</code></pre><p>6.函数构造函数生成函数实例，传入下标(没看懂)</p>
+<pre><code>for(var i = 0; i &lt; pTeam.length ; i++){
+    pTeam[i].onclick = new Function(&quot;alert(&quot; + i + &quot;);&quot; );
+}
+</code></pre><p>7.asd </p>
+<pre><code>for(var i = 0 ; i &lt; pTeam.length ; i++) {
+    pTeam[i].onclick = Function(&apos;alert(&apos; + i + &apos;)&apos;);
+}
+</code></pre><p>背景知识:</p>
+<p>构造函数生成函数实例语法如下:</p>
+<pre><code>new Function(param1,param2,.....functionBody)
+</code></pre><p>其中，param1,param2….均为传入函数的参数，最后一个参数functionBody为函数体，所有传入的参数均为字符串形式。该种方法声明的函数为匿名函数，所以需要定义变量保存函数的引用</p>
+<p>Function定义函数表达式:</p>
+<p>允许开发者动态创建函数<br>每次调用Function构造函数都会解析一次函数体，并创建新的函数对象。不像嵌套函数(递归调用函数?)以后函数定义表达式只编译一次<br>Function创造的函数处于全局作用域中</p>
+<p>自行比较:</p>
+<pre><code>var a= 10;
+function test(){
+    var a = 0;
+    return new Function(&quot;alert(&quot; + &quot;a&quot; + &quot;);&quot;);  //弹出10
+}
+test()();
+
+
+var a= 10;
+function test(){
+    var a = 0;
+    return new Function(&quot;alert(&quot; + a + &quot;);&quot;);  //弹出0
+}
+test()();
+</code></pre>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/05/09/和-法获取对象属性/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          .和[]法获取对象属性
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/08/hexo命令/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">hexo常用命令</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="循环添加下标到事件处理程序正确写法" data-title="循环添加下标到事件处理程序正确写法" data-url="http://yoursite.com/2016/05/09/循环添加下标到事件处理程序正确写法/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 TalkLee
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

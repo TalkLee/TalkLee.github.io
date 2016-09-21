@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>行走在web路上</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="##trim方法实现:
+背景知识：trim指去除字符串首尾的空白符(空格、制表符等)
+字符串(对象)的方法：
+1.获取字符串指定位置字符
+var str1 = &amp;apos;hello&amp;apos;;
+console.log(str1.charAt(1));
+2.获取字符串指定位置字符的编码
+var str1 = &amp;apos;hello &amp;apos;;
+var str2 = &amp;apos;world&amp;a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="行走在web路上">
+<meta property="og:url" content="http://yoursite.com/2016/06/19/trim/index.html">
+<meta property="og:site_name" content="行走在web路上">
+<meta property="og:description" content="##trim方法实现:
+背景知识：trim指去除字符串首尾的空白符(空格、制表符等)
+字符串(对象)的方法：
+1.获取字符串指定位置字符
+var str1 = &amp;apos;hello&amp;apos;;
+console.log(str1.charAt(1));
+2.获取字符串指定位置字符的编码
+var str1 = &amp;apos;hello &amp;apos;;
+var str2 = &amp;apos;world&amp;a">
+<meta property="og:updated_time" content="2016-05-07T02:03:24.656Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="行走在web路上">
+<meta name="twitter:description" content="##trim方法实现:
+背景知识：trim指去除字符串首尾的空白符(空格、制表符等)
+字符串(对象)的方法：
+1.获取字符串指定位置字符
+var str1 = &amp;apos;hello&amp;apos;;
+console.log(str1.charAt(1));
+2.获取字符串指定位置字符的编码
+var str1 = &amp;apos;hello &amp;apos;;
+var str2 = &amp;apos;world&amp;a">
+  
+    <link rel="alternative" href="/atom.xml" title="行走在web路上" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<script type="text/javascript">
+
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?a0f8b1403df03f16fcb98d796cec71de";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="F:/ghblog/favicon.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">TalkLee</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">写下不成熟的东西，才能看到成熟的希望</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="#" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/API探究/" style="font-size: 10px;">API探究</a> <a href="/tags/JavaScript-语法/" style="font-size: 10px;">JavaScript 语法</a> <a href="/tags/JavaScript语法/" style="font-size: 15px;">JavaScript语法</a> <a href="/tags/ejs/" style="font-size: 10px;">ejs</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/sass/" style="font-size: 10px;">sass</a> <a href="/tags/前端工具/" style="font-size: 10px;">前端工具</a> <a href="/tags/工作进度记录/" style="font-size: 10px;">工作进度记录</a> <a href="/tags/每日一博/" style="font-size: 20px;">每日一博</a> <a href="/tags/浏览器工作原理/" style="font-size: 10px;">浏览器工作原理</a> <a href="/tags/经典布局样式/" style="font-size: 10px;">经典布局样式</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">TalkLee</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="F:/ghblog/favicon.png" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">TalkLee</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">写下不成熟的东西，才能看到成熟的希望</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-trim" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/19/trim/" class="article-date">
+  	<time datetime="2016-06-19T03:15:19.490Z" itemprop="datePublished">2016-06-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##trim方法实现:</p>
+<p>背景知识：<br>trim指去除字符串首尾的空白符(空格、制表符等)</p>
+<p>字符串(对象)的方法：</p>
+<p>1.获取字符串指定位置字符</p>
+<pre><code>var str1 = &apos;hello&apos;;
+console.log(str1.charAt(1));
+</code></pre><p>2.获取字符串指定位置字符的编码</p>
+<pre><code>var str1 = &apos;hello &apos;;
+var str2 = &apos;world&apos;;
+console.log(str1.charAt(1)); //e
+</code></pre><p>3.下表法访问指定位置字符(ECMAscript5标准)<br>        var str1 = ‘hello ‘;<br>        var str2 = ‘world’;<br>        console.log(str1[1]);  //e</p>
+<p>操作方法：</p>
+<p>1.拼接：concat(),返回拼接好的字符串</p>
+<pre><code>var str1 = &apos;hello &apos;;
+var str2 = &apos;world&apos;;
+var concatedStr = str1.concat(str2);
+console.log(concatedStr); // hello world
+</code></pre><p>2.截取字符串，返回值为截取获的的子字符串</p>
+<p>2-1.slice:<br>    参数一指开始位置，参数二指结束位置的后一个字符</p>
+<pre><code>var str1 = &apos;hello &apos;;
+var str2 = &apos;world&apos;;
+console.log(str1.slice(1,3));  //el   
+</code></pre><p>2-2. substr()</p>
+<p>替换方法：</p>
+<p>//待补充String的基本方法</p>
+<p>RegExp对象:</p>
+<p>创建正则表达式:</p>
+<ol>
+<li>var reg1 = /pattern/flag;</li>
+<li>var reg2 = new RegExp(“pattern”,flag);  //flag此时为字符串</li>
+<li>var reg3 = new RegExp(/pattern/,flag);  //flag此时为字符串</li>
+</ol>
+<p>例：</p>
+<pre><code>var reg = new RegExp(&apos;abc&apos;,&apos;gi&apos;);  
+var reg = /abc/gi;
+两者等价,即构造函数中无需添加pattern两边的/
+</code></pre><p>构造函数生成正则的优点在于正则表达式动态变化的情况下可以传入变量</p>
+<p><a href="http://www.w3school.com.cn/js/js_special_characters.asp" target="_blank" rel="external">向字符串中加入特殊字符,需要转义</a>，即加入反斜杠 <strong>\ </strong></p>
+<p>字符转义:正则表达式中的元字符需要进行转义才能表示字面含义</p>
+<p>元字符:</p>
+<ul>
+<li>\b 单词的分界处 , 匹配位置</li>
+<li>. 除了 <strong>换行符</strong> 的任意 <strong>字符</strong></li>
+<li>\d 匹配数字</li>
+<li>\s 匹配任意空白符(空格制表符换行符换页符中英文全角半角空格等)</li>
+<li>\w 匹配字母数字下划线</li>
+<li>^ 匹配字符串的开始,匹配位置</li>
+<li>$ 匹配字符串的结束,匹配位置</li>
+<li>( 和 )</li>
+</ul>
+<p>当在正则表达式中添加元字符时，需要进行转义<br>当在构造函数的模式参数中添加元字符时，需要进行双重转义<br>例：</p>
+<pre><code>//?在正则中表示非字面含义，若要表示字面含义，需通过\进行转义
+var reg = /\?/;  
+var reg2 = new RegExp(&quot;\?&quot;); 在正则表达式构造函数参数字符串中正则表达式的量词都是需要被转义的特殊字符，所以\?实际表达含义为 &apos;?&apos; 
+//若要reg2表示含义和reg相同，需要对\做转义
+var reg3 = new RegExp(&quot;\\?&quot;);// \\表示后一个\被转义了，浏览器会看作字符串\?,等价于reg3 = /\?/ 
+</code></pre><p>动态属性:<br>    lastIndex : 下次匹配开始的位置,可以被exec方法修改，可写<br>    ignoreCase:是否包含标志i<br>    global:是否包含标志g<br>    multiline:是否包含标志m<br>    source：正则表达式定义时模式字符串,与reg.toString()结果相同，包含斜杠和标志</p>
+<p>静态属性:</p>
+<pre><code>- input用于匹配的母串，当调用test和exect方法成功匹配后input属性被会自动修改为上次匹配的字符串
+- lastMatch 最后一次匹配成功的子串
+- lastParen 最后分配的分组号
+- leftContext 被查找字符串从字符串开始到最后匹配的位置之间的字符串
+- rightContext 被查找的字符串中从最后一个匹配位置开始到字符串结尾的字符串(不包括最后一个匹配位置后一个位置)
+- 
+</code></pre><p>实例方法:</p>
+<ol>
+<li>exec()<br>param：String<br>返回包含该查找结果的一个数组,无匹配时返回null<br>数组第一个元素为匹配的子串,剩余元素保存被匹配的正则的各个分组<br>还包含其他属性:被匹配的<br>index:匹配到的子串首字母在母串中的位置<br>input:原始字符串(母串)<br>同时在比较过后，正则表达式的lastIndex属性也随之更新</li>
+</ol>
+<ol>
+<li>test()<br>param1:String<br>规则:参数(字符串)中存在与正则匹配的子串的情况下返回true,否则false</li>
+</ol>
+<ol>
+<li>compile()</li>
+</ol>
+<p>String对象:</p>
+<p>实例方法:</p>
+<ol>
+<li><p>match()<br>param1:String<br>将查找结果作为数组返回,每个元素为一个匹配的子串<br>不使用全局匹配的话，数组中只包含匹配子串，<br>返回数组包含三个属性:</p>
+<ul>
+<li>input 属性包含整个被查找的字符串</li>
+<li>index包含在整个被查找字符串中匹配的子字符串的位置</li>
+<li>lastIndex包含了最后一次匹配中最后一个字符的下一个文职</li>
+</ul>
+</li>
+<li><p>replace()<br>param1: 正则表达式或者字符串<br>param2:替换字符串<br>用替换字符串替换与正则表达式匹配的子串</p>
+</li>
+</ol>
+<ol>
+<li><p>search()<br>param:<br>返回与正则表达式相匹配的子串首字母在母串中下标</p>
+</li>
+<li><p>split()<br>param:字符串或者正则<br>把字符串按照参数提供的规则分割为字符串数组</p>
+</li>
+</ol>
+<p>反向引用:<br>包含分组的正则表达式在被与正则有关的方法调用后，每个分组所匹配的子串保存在RegExp对象的$n属性中，称为反向引用</p>
+<p>可以通过RegExp.$n来在程序中调用，<br>也可以通过\n在正则表达式中使用</p>
+<p>对于replace方法,反向引用可以在替换字符串中使用</p>
+<p>str.replace(reg,’12’); //1 2 分别表示分组1和2</p>
+<p>###正则表达式相关知识</p>
+<p>限定符(设置匹配字符串数量)</p>
+<ul>
+<li>*匹配0到多个</li>
+<li>+匹配1到多个</li>
+<li>? 匹配0或1个</li>
+<li>{n} 匹配n个</li>
+<li>{n,}至少匹配n个</li>
+<li>{n,m} 匹配n到m个</li>
+</ul>
+<p>字符类：设置字符集合来匹配指定范围内的字符</p>
+<p> 例:  [a-z0-9A-Z]  匹配所有单个英文字母和数字</p>
+<p>分支条件:满足任意一种规则,即退出当前分组 </p>
+<p>子表达式(分组):<br>    例: (123)  为一个分组，匹配时看作一个整体</p>
+<p>反义：</p>
+<ul>
+<li>\W 匹配任意不是字母数字下划线的字符</li>
+<li>\S 匹配任意不是空白符的字符</li>
+<li>\D 匹配任意非数字的字符</li>
+<li>\B 匹配非单词边界</li>
+<li>[^x] 匹配除x以外的任意字符</li>
+<li>[^abcd] 匹配除abcd以外的任意字符</li>
+</ul>
+<p>后向引用:小括号指定的子表达式当被文本匹配，可以对匹配的文本进行处理,<br>默认情况下，每个分组自动拥有一个组号，以分组左括号为标志，按照出现顺序从1开始计数。<strong>用于重复搜索之前某个分组匹配的文本</strong></p>
+<ul>
+<li>(pattern): 捕获括号，用于获取匹配到的字符串，然后用于后续处理</li>
+<li>(?:pattern):非捕获分组，匹配到的子串无法通过结果数组的下标进行访问</li>
+<li>引用捕获到的分组，应使用\num方法，其中num表示对应捕获分组的编号</li>
+<li>(?=pattern)：正向预查，在任何匹配pattern，非捕获匹配，断言自身出现的位置后面能匹配表达式exp</li>
+<li>(?!pattern): 负向预查，非捕获匹配</li>
+</ul>
+<p>/^([a-z])\1$/  : 匹配连续的两个相同小写字母<br>在被替换的字符串中引用捕获分组，应使用$num记法</p>
+<p>零宽断言:</p>
+<p>零宽度正预测先行断言: 表示获取出现在设定的正则所匹配的字符串之前的字符串<br>例：(?=exp)  用来获取匹配exp的子串前面的字符串</p>
+<p>贪婪:正则表达式通常匹配尽可能多的字符<br>懒惰匹配:在限定符后面加上<strong>?</strong>即可匹配尽量少的字符</p>
+<ul>
+<li>*？匹配任意次，尽可能少</li>
+<li>+? 匹配1至多次，尽可能少</li>
+<li>?? 匹配0或1次，尽可能少</li>
+<li>{n,m} 匹配n到m次，尽可能少</li>
+<li>{n,} 匹配至少n次，尽可能少</li>
+</ul>
+<p>优先级(由高到低)：</p>
+<ul>
+<li>转义符</li>
+<li>括号</li>
+<li>限定符</li>
+<li>位置和顺序</li>
+<li>| </li>
+</ul>
+<p>标志：</p>
+<ul>
+<li>i (ignoreCase)，忽略大小写</li>
+<li>m (Multiline),多行匹配</li>
+<li>g global 全局匹配</li>
+</ul>
+<p>###trim问题解析:</p>
+<p>####正则表达式方法:</p>
+<p>ECMAscript5已经加入trim方法，从<a href="http://caniuse.com/#search=trim" target="_blank" rel="external">Can i use</a>网站来看，IE9以及Android4.3并不完全支持，所以自己写一个trim方法还是很有必要的。但如果浏览器支持的话，原生trim方法由于经过优化一般来说比自己实现的方法都要快。</p>
+<p>方法1：</p>
+<pre><code>    String.prototype.trim = function(){
+    return this.replace(/^\s+/,&apos;&apos;).replace(/\s+$/,&apos;&apos;);
+};
+</code></pre><p>首尾分别用一个正则匹配。处理长字符串简单快速</p>
+<p>针对浏览器的优化:</p>
+<pre><code>消除末尾空白的正则改写为 /\s\s*/有助于提高在Firefox中的处理速度(Firefox对以不包含量词的字符为开始的正则表达式提供了优化)
+</code></pre><p>方法2：</p>
+<pre><code>String.prototype.trim2 = function(){
+    return this.replace(/^\s+|\s+$/g,&apos;&apos;);
+};
+</code></pre><p>分支条件代替两次简单的正则匹配替换(若不添加g标志，只会匹配首尾空白中的一种)<br>执行情况:匹配包含首尾空白的字符串时会匹配两次，而由于有两个分支，所以对于每个待匹配的字符串都需要尝试两次.</p>
+<p>方法3:</p>
+<pre><code>String.prototype.trim3 = function(){
+    return this.replace(/^\s*([\s\S]*?)\s*$/,&apos;$1&apos;)
+};
+</code></pre><p>方法介绍:<br>通过设置懒惰匹配分组使得，分组匹配从第一个非空白符开始直到最后一个非空白符,然后用捕获的该分组替换原始字符串.<br>性能:由于懒惰匹配的原因，容易存在回溯，在旧的浏览器中性能较差。</p>
+<p>方法4(消除可能出现的回溯):</p>
+<pre><code>String.prototype.trim4 = function(){
+    return this.replace(/^\s*([\s\S]*\S)?\s*$/,&apos;$1&apos;)
+};
+</code></pre><p>方法介绍:<br>通过设置分组中最后一个匹配字符必须是非空白符来阻止分组的贪婪匹配导致匹配到末尾空白.<br>性能:<br>优于2,3,但在Firefox和Opera 9 中速度慢，导致性能略差于方法1.</p>
+<p>方法5:</p>
+<pre><code>String.prototype.trim5 = function(){
+    return this.replace(/^\s*(\S*(\s+\S+)*)\s*$/,&apos;$1&apos;);
+};
+</code></pre><p>方法介绍:<br>显示设置分组1的前一个字符和末尾后的一个字符为空白符<br>性能:<br>速度最慢的一个，修改内部分组可以提高效率.</p>
+<p>不使用正则表达式方法:</p>
+<pre><code>    String.prototype.new_trim = function () {
+    var start = 0, end = this.length - 1 ,
+        ws = &quot;\n\r\t\f\x0b\xa0\u1680\u180e\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u200b\u2028\u2029\u202f&quot; 
+                + &quot;\u205f\u3000\ufeff&quot;;    //空白符字符串
+    while(ws.indexOf(this.charAt(start)) &gt; -1) {  //字符串指定位置字符在空白符字符串中是否存在,存在的话表示start所在位置为空白符
+        start++;
+    }
+    while(end &gt; start &amp;&amp; ws.indexOf(this.charAt(end)) &gt; -1 ){   //end位置要在start后面，否则待处理字符串全部为空白符组成
+        end--;
+    }
+    return this.slice(start,end + 1); //slice方法中获取到的子串末尾下标为参数2减一
+};
+</code></pre><p>正则和非正则方法比较:</p>
+<p>正则匹配为从前往后，而非正则方法可以通过下标直接访问，使得非正则方法匹配末尾时速度远快于正则方法.<br>但非正则方法由于需要循环遍历比较空白字符串，所以当存在首尾大段空白时，速度优势会降低.</p>
+<p>混合解决方案:</p>
+<pre><code>String.prototype.hybird_trim = function () {
+    var str = this.replace(/^\s+/,&apos;&apos;),  //消除开头空白
+        end = str.length - 1 ,
+        ws  = /\s/;
+    while(ws.test(str.charAt(end))){   //由循环比较空白字符串变为test正则，提高效率
+        end--;
+    }
+    return str.slice(0,end+1); 
+};
+</code></pre><p>总结: 正则方法中字符串总长度对于性能的影响大于首尾空白的长度；而非正则的方法从末尾反向查找，与待处理字符串长度无关，但空白长度决定循环次数。</p>
+<p>结论：混合方案在处理长字符串时速度快，但代码来说长一些，而正则中第一种方法性能表现均衡</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/07/18/background复合属性解析/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          background复合属性解析
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/06/14/浮动与定位/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">浮动和定位</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="trim" data-title="" data-url="http://yoursite.com/2016/06/19/trim/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 TalkLee
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

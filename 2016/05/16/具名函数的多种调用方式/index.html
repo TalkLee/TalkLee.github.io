@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>具名函数的多种调用方式 | 行走在web路上</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="背景代码:
+function foo(){
+    alert(&amp;apos;a&amp;apos;);
+}
+方法1:
+括号()运算符调用
+foo();
+方法2&amp;amp;3:
+call和apply方法
+foo.call();  //call和apply中传入的第一个参数为函数调用中作用域(this对象),
+单纯为调用函数的话，传入变量常量任何均可
+foo.apply();
+方法4：
+new构造函数调用方法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="具名函数的多种调用方式">
+<meta property="og:url" content="http://yoursite.com/2016/05/16/具名函数的多种调用方式/index.html">
+<meta property="og:site_name" content="行走在web路上">
+<meta property="og:description" content="背景代码:
+function foo(){
+    alert(&amp;apos;a&amp;apos;);
+}
+方法1:
+括号()运算符调用
+foo();
+方法2&amp;amp;3:
+call和apply方法
+foo.call();  //call和apply中传入的第一个参数为函数调用中作用域(this对象),
+单纯为调用函数的话，传入变量常量任何均可
+foo.apply();
+方法4：
+new构造函数调用方法">
+<meta property="og:updated_time" content="2016-05-16T04:35:26.596Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="具名函数的多种调用方式">
+<meta name="twitter:description" content="背景代码:
+function foo(){
+    alert(&amp;apos;a&amp;apos;);
+}
+方法1:
+括号()运算符调用
+foo();
+方法2&amp;amp;3:
+call和apply方法
+foo.call();  //call和apply中传入的第一个参数为函数调用中作用域(this对象),
+单纯为调用函数的话，传入变量常量任何均可
+foo.apply();
+方法4：
+new构造函数调用方法">
+  
+    <link rel="alternative" href="/atom.xml" title="行走在web路上" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<script type="text/javascript">
+
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?a0f8b1403df03f16fcb98d796cec71de";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="F:/ghblog/favicon.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">TalkLee</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">写下不成熟的东西，才能看到成熟的希望</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="#" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/API探究/" style="font-size: 10px;">API探究</a> <a href="/tags/JavaScript-语法/" style="font-size: 10px;">JavaScript 语法</a> <a href="/tags/JavaScript语法/" style="font-size: 15px;">JavaScript语法</a> <a href="/tags/ejs/" style="font-size: 10px;">ejs</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/sass/" style="font-size: 10px;">sass</a> <a href="/tags/前端工具/" style="font-size: 10px;">前端工具</a> <a href="/tags/工作进度记录/" style="font-size: 10px;">工作进度记录</a> <a href="/tags/每日一博/" style="font-size: 20px;">每日一博</a> <a href="/tags/浏览器工作原理/" style="font-size: 10px;">浏览器工作原理</a> <a href="/tags/经典布局样式/" style="font-size: 10px;">经典布局样式</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">TalkLee</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="F:/ghblog/favicon.png" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">TalkLee</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">写下不成熟的东西，才能看到成熟的希望</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-具名函数的多种调用方式" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/16/具名函数的多种调用方式/" class="article-date">
+  	<time datetime="2016-05-16T02:45:16.000Z" itemprop="datePublished">2016-05-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      具名函数的多种调用方式
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/每日一博/">每日一博</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>背景代码:</p>
+<pre><code>function foo(){
+    alert(&apos;a&apos;);
+}
+</code></pre><p>方法1:</p>
+<p>括号()运算符调用</p>
+<pre><code>foo();
+</code></pre><p>方法2&amp;3:</p>
+<p>call和apply方法</p>
+<pre><code>foo.call();  //call和apply中传入的第一个参数为函数调用中作用域(this对象),
+单纯为调用函数的话，传入变量常量任何均可
+foo.apply();
+</code></pre><p>方法4：</p>
+<p>new构造函数调用方法</p>
+<pre><code>new foo()
+</code></pre><p>注意以下情况:</p>
+<pre><code>    function foo(param){
+    alert(param);
+    return param;   //有返回值
+}
+
+var a = new foo({ b : &apos;1&apos;});  //返回传入对象
+var a = new foo(&apos;OK&apos;);    //返回另一个对象
+</code></pre><p>若函数声明中返回对象，则构造函数调用时返回指定的对象<br>若函数声明中返回基本类型(包括null和undefined),构造函数调用时实际返回函数语句中生成的对象(通过this给生成的对象添加属性)</p>
+<pre><code>function foo(param){
+    alert(param);
+    this.b = &apos;1&apos;;
+    return null;
+}
+</code></pre><p>上例中return语句无效,返回对象，包含属性b.</p>
+<p>若函数声明中声明新对象，并且通过this给构造函数生成对象添加属性，又会出现什么情况呢?</p>
+<p>若无返回值或者返回基本类型或者返回this，则返回this产生的对象，<br>若返回构造函数中声明的对象，则返回指定的对象(工厂模式的写法)</p>
+<pre><code>function foo(param){
+    this.pro = &apos;this&apos;;
+    var obj = {};
+    obj.name = &apos;foo&apos;;
+    obj.msg = param;
+    //return this;  返回对象中包括pro属性
+    //return obj;  返回对象为obj
+}
+</code></pre><p>工厂模式:</p>
+<pre><code>function foo(param){
+    var obj = {};
+    obj.msg = param;
+    return obj;
+}
+var a = new foo(&apos;2&apos;);  //构造函数方式调用
+var b = foo(&apos;3&apos;);  //函数调用,两种方法返回结果相同，原因上面已经讨论过了
+</code></pre>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/05/17/JavaScript写类方式/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          JavaScript写类方式
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/15/遍历数组/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">遍历数组</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="具名函数的多种调用方式" data-title="具名函数的多种调用方式" data-url="http://yoursite.com/2016/05/16/具名函数的多种调用方式/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 TalkLee
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

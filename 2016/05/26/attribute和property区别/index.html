@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>attribute和property区别 | 行走在web路上</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="MDN翻译如下:
+attribute拓展了标签，给标签提供了新的行为或者元数据。attribute总是有着一个键值对的表格，赋予attribute标识符以及相关联的值。
+####property：
+DOM对象的property值通过点取法获取
+document.body.innerHTML;
+DOM对象作为对象，可以在脚本中自定义property，而自定义property不出现在html文档中所以">
+<meta property="og:type" content="article">
+<meta property="og:title" content="attribute和property区别">
+<meta property="og:url" content="http://yoursite.com/2016/05/26/attribute和property区别/index.html">
+<meta property="og:site_name" content="行走在web路上">
+<meta property="og:description" content="MDN翻译如下:
+attribute拓展了标签，给标签提供了新的行为或者元数据。attribute总是有着一个键值对的表格，赋予attribute标识符以及相关联的值。
+####property：
+DOM对象的property值通过点取法获取
+document.body.innerHTML;
+DOM对象作为对象，可以在脚本中自定义property，而自定义property不出现在html文档中所以">
+<meta property="og:updated_time" content="2016-05-26T15:46:48.110Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="attribute和property区别">
+<meta name="twitter:description" content="MDN翻译如下:
+attribute拓展了标签，给标签提供了新的行为或者元数据。attribute总是有着一个键值对的表格，赋予attribute标识符以及相关联的值。
+####property：
+DOM对象的property值通过点取法获取
+document.body.innerHTML;
+DOM对象作为对象，可以在脚本中自定义property，而自定义property不出现在html文档中所以">
+  
+    <link rel="alternative" href="/atom.xml" title="行走在web路上" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<script type="text/javascript">
+
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?a0f8b1403df03f16fcb98d796cec71de";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="F:/ghblog/favicon.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">TalkLee</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">写下不成熟的东西，才能看到成熟的希望</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="#" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/API探究/" style="font-size: 10px;">API探究</a> <a href="/tags/JavaScript-语法/" style="font-size: 10px;">JavaScript 语法</a> <a href="/tags/JavaScript语法/" style="font-size: 15px;">JavaScript语法</a> <a href="/tags/ejs/" style="font-size: 10px;">ejs</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/sass/" style="font-size: 10px;">sass</a> <a href="/tags/前端工具/" style="font-size: 10px;">前端工具</a> <a href="/tags/工作进度记录/" style="font-size: 10px;">工作进度记录</a> <a href="/tags/每日一博/" style="font-size: 20px;">每日一博</a> <a href="/tags/浏览器工作原理/" style="font-size: 10px;">浏览器工作原理</a> <a href="/tags/经典布局样式/" style="font-size: 10px;">经典布局样式</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">TalkLee</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="F:/ghblog/favicon.png" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">TalkLee</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">写下不成熟的东西，才能看到成熟的希望</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-attribute和property区别" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/26/attribute和property区别/" class="article-date">
+  	<time datetime="2016-05-26T15:46:05.000Z" itemprop="datePublished">2016-05-26</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      attribute和property区别
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript语法/">JavaScript语法</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>MDN翻译如下:</p>
+<p>attribute拓展了标签，给标签提供了新的行为或者元数据。attribute总是有着一个键值对的表格，赋予attribute标识符以及相关联的值。</p>
+<p>####property：</p>
+<p><strong>DOM对象</strong>的property值通过点取法获取</p>
+<pre><code>document.body.innerHTML;
+</code></pre><p>DOM对象作为对象，可以在脚本中自定义property，而自定义property不出现在html文档中<br>所以，property标识符定义只遵守js标识符命名规范</p>
+<p>####attribute:</p>
+<p><strong>DOM节点</strong>提供以下方法访问attribute(存在兼容问题)</p>
+<ul>
+<li>hasAttribute</li>
+<li>getAttribute</li>
+<li>setAttribute</li>
+<li>removeAttribute</li>
+</ul>
+<p>由于是DOM节点的“属性”，所以遵守HTML标识符规范：</p>
+<ul>
+<li><strong>值只能为字符串</strong></li>
+<li>不区分大小写</li>
+<li>html中出现</li>
+<li>可以通过DOM对象的属性:<strong>attributes</strong>对象获取所有attribute组成的一个类数组<strong>NamedNodeMap</strong></li>
+<li><strong>其实attribute键名也为字符串形式_</strong></li>
+</ul>
+<p>JS中操作DOM对象的property只需要点取法或者下标法即可获取，而除了‘共通属性’外的其他attribute，则只能通过JS自带attribute方法获取。html自定义属性(自定义attribute)也能通过attribute一类方法访问</p>
+<p>常用attriubte中，id、class、title、style等也作为property附加到DOM对象中了</p>
+<p>####特殊‘共通属性’分辨: </p>
+<p>class:</p>
+<p> HTML中class作为attribute，在getAttribute等方法中，应该传入’class’(字符串形式)<br> 作为property，由于class为保留字，所以改为className</p>
+<pre><code>alert(test[&apos;class&apos;]);  // 尝试通过property方法获取,失败
+alert(test[&apos;className&apos;]); //property中class正确书写为className
+</code></pre><p>style:</p>
+<pre><code>alert(test.style);    //返回div1指向的DOM节点的CSSStyleDeclaration对象
+alert(test.getAttribute(&apos;style&apos;));  //返回一个包裹了对应DOM节点的样式 字符串   
+</code></pre><p>PS：attribute方法返回的是行内样式字符串</p>
+<p>onclick:</p>
+<pre><code>alert(typeof btn.getAttribute(&apos;onclick&apos;));  //string
+alert(typeof btn.onclick);   //function 
+</code></pre><p>个人建议:<br>当试图将‘属性’看作attribute访问时，最好通过JS自带 attribute 方法进行访问，点取法和下标法用于获取property，易读，<br>若考虑兼容性，可对特定‘共通属性’作规范.</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/05/28/类数组转化为数组/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          类数组转化为数组
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/25/同名标识符优先级讨论/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">同名标识符优先级讨论</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="attribute和property区别" data-title="attribute和property区别" data-url="http://yoursite.com/2016/05/26/attribute和property区别/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 TalkLee
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
