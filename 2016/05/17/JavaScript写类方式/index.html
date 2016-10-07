@@ -7,36 +7,33 @@
   <title>JavaScript写类方式 | 行走在web路上</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="本文讨论面向对象中类的书写方式,暂不考虑类的继承和私有方法属性
-####构造函数方法
-function Person(name) {
+构造函数方法function Person(name) {
     this.name = name;
     this.getName = function(){
         return this.name;
 }    
-根据参数不同，构造拥有不同属性的对象实例对象实例的方法每次都会被创建,浪费资源，例如getNam">
+根据参数不同，构造拥有不同属性的对象实例对象实例的方法每次都会被创建,浪费资源，例如getName这种方法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript写类方式">
 <meta property="og:url" content="http://yoursite.com/2016/05/17/JavaScript写类方式/index.html">
 <meta property="og:site_name" content="行走在web路上">
 <meta property="og:description" content="本文讨论面向对象中类的书写方式,暂不考虑类的继承和私有方法属性
-####构造函数方法
-function Person(name) {
+构造函数方法function Person(name) {
     this.name = name;
     this.getName = function(){
         return this.name;
 }    
-根据参数不同，构造拥有不同属性的对象实例对象实例的方法每次都会被创建,浪费资源，例如getNam">
-<meta property="og:updated_time" content="2016-05-20T14:53:04.186Z">
+根据参数不同，构造拥有不同属性的对象实例对象实例的方法每次都会被创建,浪费资源，例如getName这种方法">
+<meta property="og:updated_time" content="2016-10-07T15:24:31.242Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript写类方式">
 <meta name="twitter:description" content="本文讨论面向对象中类的书写方式,暂不考虑类的继承和私有方法属性
-####构造函数方法
-function Person(name) {
+构造函数方法function Person(name) {
     this.name = name;
     this.getName = function(){
         return this.name;
 }    
-根据参数不同，构造拥有不同属性的对象实例对象实例的方法每次都会被创建,浪费资源，例如getNam">
+根据参数不同，构造拥有不同属性的对象实例对象实例的方法每次都会被创建,浪费资源，例如getName这种方法">
   
     <link rel="alternative" href="/atom.xml" title="行走在web路上" type="application/atom+xml">
   
@@ -235,8 +232,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p>本文讨论面向对象中类的书写方式,暂不考虑类的继承和私有方法属性</p>
-<p>####构造函数方法</p>
-<pre><code>function Person(name) {
+<h4 id="构造函数方法"><a href="#构造函数方法" class="headerlink" title="构造函数方法"></a>构造函数方法</h4><pre><code>function Person(name) {
     this.name = name;
     this.getName = function(){
         return this.name;
@@ -250,8 +246,7 @@ function Person(name) {
     this.name = name;
     this.getName = getName;
 }
-</code></pre><p>####原型方式</p>
-<p>所有对象实例的属性均为共用，无法通过参数对对象实例属性进行定制</p>
+</code></pre><h4 id="原型方式"><a href="#原型方式" class="headerlink" title="原型方式"></a>原型方式</h4><p>所有对象实例的属性均为共用，无法通过参数对对象实例属性进行定制</p>
 <pre><code>function Person() {}  //作为构造函数调用时，返回一个默认对象,包含Object原型对象的所有属性
 Person.prototype.name = &apos;TalkLee&apos;;
 Person.prototype.getName = function(){

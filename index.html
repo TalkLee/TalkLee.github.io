@@ -189,8 +189,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##trim方法实现:</p>
-<p>背景知识：<br>trim指去除字符串首尾的空白符(空格、制表符等)</p>
+        <h2 id="trim方法实现"><a href="#trim方法实现" class="headerlink" title="trim方法实现:"></a>trim方法实现:</h2><p>背景知识：<br>trim指去除字符串首尾的空白符(空格、制表符等)</p>
 <p>字符串(对象)的方法：</p>
 <p>1.获取字符串指定位置字符</p>
 <pre><code>var str1 = &apos;hello&apos;;
@@ -213,7 +212,7 @@ var str2 = &apos;world&apos;;
 console.log(str1.slice(1,3));  //el   
 </code></pre><p>2-2. substr()</p>
 <p>替换方法：</p>
-<p>//待补充String的基本方法</p>
+<p>// 待补充String的基本方法</p>
 <p>RegExp对象:</p>
 <p>创建正则表达式:</p>
 <ol>
@@ -286,8 +285,7 @@ var reg3 = new RegExp(&quot;\\?&quot;);// \\表示后一个\被转义了，浏�
 <p>可以通过RegExp.$n来在程序中调用，<br>也可以通过\n在正则表达式中使用</p>
 <p>对于replace方法,反向引用可以在替换字符串中使用</p>
 <p>str.replace(reg,’12’); //1 2 分别表示分组1和2</p>
-<p>###正则表达式相关知识</p>
-<p>限定符(设置匹配字符串数量)</p>
+<h3 id="正则表达式相关知识"><a href="#正则表达式相关知识" class="headerlink" title="正则表达式相关知识"></a>正则表达式相关知识</h3><p>限定符(设置匹配字符串数量)</p>
 <ul>
 <li>*匹配0到多个</li>
 <li>+匹配1到多个</li>
@@ -342,9 +340,7 @@ var reg3 = new RegExp(&quot;\\?&quot;);// \\表示后一个\被转义了，浏�
 <li>m (Multiline),多行匹配</li>
 <li>g global 全局匹配</li>
 </ul>
-<p>###trim问题解析:</p>
-<p>####正则表达式方法:</p>
-<p>ECMAscript5已经加入trim方法，从<a href="http://caniuse.com/#search=trim" target="_blank" rel="external">Can i use</a>网站来看，IE9以及Android4.3并不完全支持，所以自己写一个trim方法还是很有必要的。但如果浏览器支持的话，原生trim方法由于经过优化一般来说比自己实现的方法都要快。</p>
+<h3 id="trim问题解析"><a href="#trim问题解析" class="headerlink" title="trim问题解析:"></a>trim问题解析:</h3><h4 id="正则表达式方法"><a href="#正则表达式方法" class="headerlink" title="正则表达式方法:"></a>正则表达式方法:</h4><p>ECMAscript5已经加入trim方法，从<a href="http://caniuse.com/#search=trim" target="_blank" rel="external">Can i use</a>网站来看，IE9以及Android4.3并不完全支持，所以自己写一个trim方法还是很有必要的。但如果浏览器支持的话，原生trim方法由于经过优化一般来说比自己实现的方法都要快。</p>
 <p>方法1：</p>
 <pre><code>    String.prototype.trim = function(){
     return this.replace(/^\s+/,&apos;&apos;).replace(/\s+$/,&apos;&apos;);
@@ -823,9 +819,7 @@ var reg3 = new RegExp(&quot;\\?&quot;);// \\表示后一个\被转义了，浏�
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>###浮动和定位</p>
-<p>###浮动</p>
-<p>浮动，将元素从文档的正常流中删除，但仍影响布局。</p>
+        <h3 id="浮动和定位"><a href="#浮动和定位" class="headerlink" title="浮动和定位"></a>浮动和定位</h3><h3 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h3><p>浮动，将元素从文档的正常流中删除，但仍影响布局。</p>
 <p>元素浮动时，其他内容会”环绕”该元素。</p>
 <p>浮动元素周围的外边距不合并。</p>
 <ul>
@@ -840,8 +834,7 @@ var reg3 = new RegExp(&quot;\\?&quot;);// \\表示后一个\被转义了，浏�
 <p>如果浮动元素之前还有一个元素，浮动元素顶部不能超过该元素生成框的任何行框，<br>即浮动元素低于前一个元素的最低行框</p>
 <p>浮动元素自动生成块级框，即只能占据整个行框的一个元素框。当当前行框中存在任何其他元素(文档中之前出现的元素)占据空间时，浮动元素会到下一行进行浮动。<br> 若浮动图片处于一个段落中，则浮动图片最高点只能放在图片所在行框的顶部.<br> <a href="http://jsbin.com/yufoziqavu/1/edit?html,output" target="_blank" rel="external">实例</a></p>
 <p>清除元素(设置clear属性的元素)为放置被float元素覆盖，会落在float元素的下边，实际上和设置margin使得元素内容恰好在float元素下面一样。所以给清除元素添加 <strong>上外边距</strong>没有意义。</p>
-<p>###定位</p>
-<p>position:</p>
+<h3 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h3><p>position:</p>
 <p>static:<br>行内元素生成一个或多个行框<br>块级元素则生成一个矩形框</p>
 <p>relative:</p>
 <p>相对未设置浮动和定位属性前的位置进行偏移，原本占据空间保留</p>
@@ -966,19 +959,14 @@ var reg3 = new RegExp(&quot;\\?&quot;);// \\表示后一个\被转义了，浏�
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>###视觉格式化模型</p>
-<p>####text-align:适用于块级元素</p>
-<p>块级元素和行内元素是由HTML文档标准决定的，display中的block和inline之类则和html标准定义的块级元素和行内元素的 <strong>表现</strong>类似，但是并不相同，即修改display属性可以使得行内元素/块级元素 表现得类似 块级元素/行内元素，但标签实质不变，不能因为修改display属性就可以行内元素嵌套块级元素(不恰当,但能表述问题)</p>
+        <h3 id="视觉格式化模型"><a href="#视觉格式化模型" class="headerlink" title="视觉格式化模型"></a>视觉格式化模型</h3><h4 id="text-align-适用于块级元素"><a href="#text-align-适用于块级元素" class="headerlink" title="text-align:适用于块级元素"></a>text-align:适用于块级元素</h4><p>块级元素和行内元素是由HTML文档标准决定的，display中的block和inline之类则和html标准定义的块级元素和行内元素的 <strong>表现</strong>类似，但是并不相同，即修改display属性可以使得行内元素/块级元素 表现得类似 块级元素/行内元素，但标签实质不变，不能因为修改display属性就可以行内元素嵌套块级元素(不恰当,但能表述问题)</p>
 <p>width和height不能应用于行内非替换元素。</p>
 <p>外边距，内边距为百分比时，是指相对于父元素的width计算的</p>
 <p>默认边框为元素前景色(文本字体颜色),若无文本(img标签)，则为父元素的文本颜色.</p>
 <p>元素背景延伸到边框边界，即背景是元素内容、内边距、边框共同的背景<br><a href="http://jsbin.com/boyuga/2/edit?html,output" target="_blank" rel="external">实例</a></p>
-<p>###块级元素格式化</p>
-<p>####水平格式化：</p>
-<p>包含块：最近的块级祖先框、表单元格或行内块祖先框的 <strong>内容边界</strong>.</p>
+<h3 id="块级元素格式化"><a href="#块级元素格式化" class="headerlink" title="块级元素格式化"></a>块级元素格式化</h3><h4 id="水平格式化："><a href="#水平格式化：" class="headerlink" title="水平格式化："></a>水平格式化：</h4><p>包含块：最近的块级祖先框、表单元格或行内块祖先框的 <strong>内容边界</strong>.</p>
 <p>元素框：所有元素都会生成一个矩形框, = 内容边界 + 边框 + 外边距</p>
-<p>####元素框宽度和父元素width相同.</p>
-<p>border、padding不能为负</p>
+<h4 id="元素框宽度和父元素width相同"><a href="#元素框宽度和父元素width相同" class="headerlink" title="元素框宽度和父元素width相同."></a>元素框宽度和父元素width相同.</h4><p>border、padding不能为负</p>
 <p>width、magin-left和margin-right取值可以为auto:</p>
 <ol>
 <li><p>三者中之一设置为auto，为使其满足元素框宽度等于父元素width，则将auto强制变为所需长度</p>
@@ -1001,24 +989,20 @@ var reg3 = new RegExp(&quot;\\?&quot;);// \\表示后一个\被转义了，浏�
 <blockquote>
 <p>替换元素，若height或者width只设置其中之一时，另外一个未设置的属性等比例变化</p>
 </blockquote>
-<p>####垂直格式化</p>
-<p>设置高度 &gt; 内容所需占用的高度 ， 内容与边框之间存在空隙，类似含有padding的效果</p>
+<h4 id="垂直格式化"><a href="#垂直格式化" class="headerlink" title="垂直格式化"></a>垂直格式化</h4><p>设置高度 &gt; 内容所需占用的高度 ， 内容与边框之间存在空隙，类似含有padding的效果</p>
 <p>设置高度 &lt; 内容所需占用的高度 ， 根据overflow的设置来显示内容</p>
 <p>若margin-top或margin-bottom设置为auto，自动变为0</p>
 <p>负外边距合并:</p>
 <p>两元素外边距均为负： 取绝对值大的负外边距作为两元素之间外边距.<br>          一正一负:  正负作差为实际边距<br>若两元素外边距合并后值小于0会发生覆盖，而根据浏览器按照文档先后顺序渲染的原则，后面的元素的背景色有可能会覆盖之前元素的背景色.</p>
 <p>list-style-position:可以将列表的标志放置在li内部或者外部，从而使得li表现为块级元素或者行内元素</p>
-<p>###行内元素格式化：</p>
-<p>####line-height:可继承</p>
-<p>对块级元素添加line-height属性时，实际应用到块级元素内部的各文本行(均可看作行内元素)，块级元素本身不受影响</p>
+<h3 id="行内元素格式化："><a href="#行内元素格式化：" class="headerlink" title="行内元素格式化："></a>行内元素格式化：</h3><h4 id="line-height-可继承"><a href="#line-height-可继承" class="headerlink" title="line-height:可继承"></a>line-height:可继承</h4><p>对块级元素添加line-height属性时，实际应用到块级元素内部的各文本行(均可看作行内元素)，块级元素本身不受影响</p>
 <p>行内只包含非替换元素时，如何构造行框:</p>
 <ol>
 <li>对于行内非替换元素或者匿名文本,font-size决定 <strong>内容区</strong>的高度</li>
 <li>获得line-height高度,通过与font-size作差，差除以2，获得行间距,其中line-height决定 <strong>行内框</strong>高度大小</li>
 </ol>
 <p>通过行内框，决定整个行框的高度。见行框定义</p>
-<p>####文本按照基线对齐</p>
-<p>vertical-align设置为数值时，会将元素上移数值大小高度，同时使得行框高度也升高<br>其他值:<br>top: 元素行内框顶端与包含该元素的行框顶端对齐<br>bottom：                          行框底端对齐<br>text-top: 元素行内框顶端和父元素内容区顶端对齐<br>text-bottom:                    内容区底端对齐<br>middle: 元素行内框垂直中点与父元素基线上0.5ex处一点对齐<br>super：元素内容区和行内框上移<br>sub：                    下移<br>百分比: 相对同一元素line-height值</p>
+<h4 id="文本按照基线对齐"><a href="#文本按照基线对齐" class="headerlink" title="文本按照基线对齐"></a>文本按照基线对齐</h4><p>vertical-align设置为数值时，会将元素上移数值大小高度，同时使得行框高度也升高<br>其他值:<br>top: 元素行内框顶端与包含该元素的行框顶端对齐<br>bottom：                          行框底端对齐<br>text-top: 元素行内框顶端和父元素内容区顶端对齐<br>text-bottom:                    内容区底端对齐<br>middle: 元素行内框垂直中点与父元素基线上0.5ex处一点对齐<br>super：元素内容区和行内框上移<br>sub：                    下移<br>百分比: 相对同一元素line-height值</p>
 <p>最佳实践: </p>
 <blockquote>
 <p>最好将line-height设置为一个原始数字值,此时该数字值为缩放因子(相对于自身font-size)，且可继承</p>
@@ -1028,8 +1012,7 @@ var reg3 = new RegExp(&quot;\\?&quot;);// \\表示后一个\被转义了，浏�
 <p>行内替换元素:<br>行内替换元素的高度(固有高度或者设置高度)会影响行框的高度.<br>此时行内替换元素的高度,指height，margin，border，padding的总和作为行框的高度，</p>
 <p><strong>替换元素形成的元素框(非内容区)的底边和周围文字的基线水平.</strong></p>
 <p>行内替换元素仍然会有line-height属性(显式设置或者继承自祖先元素)，行内替换元素通过该值确保垂直方向如何定位自身，尤其是设置vertical-align时，因为vertical-align的百分比数值相对于自身的line-height来计算的。</p>
-<p>####匿名框:</p>
-<p>匿名文本：未包含在 <strong>行内元素</strong>中的字符串，空格也是匿名文本的一部分。</p>
+<h4 id="匿名框"><a href="#匿名框" class="headerlink" title="匿名框:"></a>匿名框:</h4><p>匿名文本：未包含在 <strong>行内元素</strong>中的字符串，空格也是匿名文本的一部分。</p>
 <p>em框： 字符框,font-size确定了各个em框的高度，实际显示的字形(glyph)和em框相比大小不一定相等</p>
 <p>内容区: 对于非替换元素，元素中各字符的em框串在一起构成的框.替换元素，内容区就是元素固有大小加上外边距、边框或内边距</p>
 <p>行间距：( font-size - line-height ) / 2 等于行间距。只应用于非替换元素</p>
@@ -1109,8 +1092,7 @@ var reg3 = new RegExp(&quot;\\?&quot;);// \\表示后一个\被转义了，浏�
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>####图片垂直居中:</p>
-<pre><code>&lt;div id=&quot;imgBox&quot;&gt;
+        <h4 id="图片垂直居中"><a href="#图片垂直居中" class="headerlink" title="图片垂直居中:"></a>图片垂直居中:</h4><pre><code>&lt;div id=&quot;imgBox&quot;&gt;
     &lt;img src=&quot;build/img/note_icon2.png&quot;&gt;
 &lt;/div&gt;
 
@@ -1212,10 +1194,8 @@ var reg3 = new RegExp(&quot;\\?&quot;);// \\表示后一个\被转义了，浏�
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>###浏览器工作原理</p>
-<p>本文主要是学习<br><a href="http://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/" target="_blank" rel="external">浏览器的工作原理：新式网络浏览器幕后揭秘</a><br>时做的笔记，期间还参杂自己的一些理解。<br>水平有限，有错误地方欢迎指正。</p>
-<p>####浏览器功能:</p>
-<p>向服务器发出请求，获取以及发送一些网络资源，主要是html文档，当然还包括css，js，pdf,多媒体以及其他类型文件。资源位置由URI指定。</p>
+        <h3 id="浏览器工作原理"><a href="#浏览器工作原理" class="headerlink" title="浏览器工作原理"></a>浏览器工作原理</h3><p>本文主要是学习<br><a href="http://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/" target="_blank" rel="external">浏览器的工作原理：新式网络浏览器幕后揭秘</a><br>时做的笔记，期间还参杂自己的一些理解。<br>水平有限，有错误地方欢迎指正。</p>
+<h4 id="浏览器功能"><a href="#浏览器功能" class="headerlink" title="浏览器功能:"></a>浏览器功能:</h4><p>向服务器发出请求，获取以及发送一些网络资源，主要是html文档，当然还包括css，js，pdf,多媒体以及其他类型文件。资源位置由URI指定。</p>
 <p>用户界面(基本元素):</p>
 <ul>
 <li>URL地址栏</li>
@@ -1255,8 +1235,7 @@ var reg3 = new RegExp(&quot;\\?&quot;);// \\表示后一个\被转义了，浏�
 <ul>
 <li>这是持久层。浏览器需要在硬盘上保存各种数据，例如 Cookie。新的 HTML 规范 (HTML5) 定义了“网络数据库”，这是一个完整（但是轻便）的浏览器内数据库。</li>
 </ul>
-<p>####渲染引擎</p>
-<p>用于显示浏览器请求的内容，默认可以显示html，css以及图片，通过插件等方式可以支持其他格式文件显示。</p>
+<h4 id="渲染引擎"><a href="#渲染引擎" class="headerlink" title="渲染引擎"></a>渲染引擎</h4><p>用于显示浏览器请求的内容，默认可以显示html，css以及图片，通过插件等方式可以支持其他格式文件显示。</p>
 <p>主要有以下几种渲染引擎(内核)：</p>
 <ul>
 <li>Trident(IE使用，Edge新内核为EdgeHTML,具体内容<a href="https://www.zhihu.com/question/29985708" target="_blank" rel="external">如何评价 Microsoft Edge 浏览器？</a>)，JS内核分别为Jscript(IE8),Chakra(IE9+)</li>
@@ -1265,8 +1244,7 @@ var reg3 = new RegExp(&quot;\\?&quot;);// \\表示后一个\被转义了，浏�
 <li>Blink(Chrome和Opera的新内核),Chrome的JavaScript引擎为V8,WebCore排版引擎    </li>
 <li>Presto(Opera旧内核)，不做介绍</li>
 </ul>
-<p>####内核工作流程：</p>
-<ol>
+<h4 id="内核工作流程："><a href="#内核工作流程：" class="headerlink" title="内核工作流程："></a>内核工作流程：</h4><ol>
 <li>解析HTML构造DOM树：<br> 同时解析CSS文件及html中内嵌样式，相结合用于用于渲染树的构建</li>
 <li>渲染树构建<br> 渲染树的节点为一个个包含样式属性的盒模型</li>
 <li>页面布局<br> 为DOM树节点分配不同坐标</li>
@@ -1278,10 +1256,8 @@ var reg3 = new RegExp(&quot;\\?&quot;);// \\表示后一个\被转义了，浏�
 <p>获取HTML文档，通过html编译器解析HTML文档为DOM树(html标签转化为DOM节点)，<br>与此同时，获取到样式表(包括内嵌和外链)并解析为样式规则。DOM树和样式规则<br>相连接共同作用生成渲染树，渲染树用于布局(这里渲染树和布局的作用是双向的?),浏览器通过生成好的渲染树进行绘制，从而将样式应用到html文档并展示出来。</p>
 <p><img src="http://o7zpnvyhh.bkt.clouddn.com/webkitflow.png" alt="Gecko流程"></p>
 <p>获取HTML文档，解析html文档为内容槽(用于连接html解析器和文档?)，内容槽转化为内容模型，内容槽同时通过css解析器转化为样式规则，样式规则和内容模型连接生成帧构造(框架树)，帧构造产生框架树(帧 === 框架)，用于重排(reflow)，之后通过绘制从而展现应用样式规则的html文档。</p>
-<p>###详细介绍：</p>
-<p>####解析：</p>
-<p>HTML文档采用DTD格式，非上下文无关语法，所以无法通过常规解析器解析。<br>解析器解析HTML文档输出DOM树(由DOM元素和属性即节点构成的树结构)</p>
-<p>#####解析过程：<br><img src="http://o7zpnvyhh.bkt.clouddn.com/resolve.png" alt="解析过程"></p>
+<h3 id="详细介绍："><a href="#详细介绍：" class="headerlink" title="详细介绍："></a>详细介绍：</h3><h4 id="解析："><a href="#解析：" class="headerlink" title="解析："></a>解析：</h4><p>HTML文档采用DTD格式，非上下文无关语法，所以无法通过常规解析器解析。<br>解析器解析HTML文档输出DOM树(由DOM元素和属性即节点构成的树结构)</p>
+<h5 id="解析过程："><a href="#解析过程：" class="headerlink" title="解析过程："></a>解析过程：</h5><p><img src="http://o7zpnvyhh.bkt.clouddn.com/resolve.png" alt="解析过程"></p>
 <ol>
 <li>标记化:词法分析，输入内容拆分成多个标记，包括起始结束标记，属性名称和值</li>
 <li>树构建，识别标记同时传递给树构造器，不断识别标记，并构建DOM树</li>
@@ -1292,44 +1268,28 @@ var reg3 = new RegExp(&quot;\\?&quot;);// \\表示后一个\被转义了，浏�
 <p>将Document对象作为DOM树根节点，对DOM树不断进行修改。状态机分割的token传递过来后，通过树构建器将其添加到DOM树中，同时，通过堆栈对标记的闭合等问题进行检测。</p>
 <p>解析完成后，DOM树构建完毕，页面变为交互状态(加载完成)，之后加载defer的脚本，对DOM树进行修改，完全完毕后，变为”完成”状态。<br>此时，加载事件将可被触发。</p>
 <p>HTML5文档容错机制：</p>
-<p>####更新于2016.6.1</p>
-<p>####节日快乐</p>
-<p>####CSS解析<br>CSS为上下文无关语法，所以可以通过常用解析器进行解析。</p>
+<h4 id="更新于2016-6-1"><a href="#更新于2016-6-1" class="headerlink" title="更新于2016.6.1"></a>更新于2016.6.1</h4><h4 id="节日快乐"><a href="#节日快乐" class="headerlink" title="节日快乐"></a>节日快乐</h4><h4 id="CSS解析"><a href="#CSS解析" class="headerlink" title="CSS解析"></a>CSS解析</h4><p>CSS为上下文无关语法，所以可以通过常用解析器进行解析。</p>
 <p>Webkit解析器:<br>使用Flex和Bison解析生成器，通过CSS语法规则自动创建解析器。<br>Bison创建自上而下的移位规约解析器。Firefox使用的是自己编写的自上而下的解析器。通过解析器将CSS文件解析为一个个StyleSheet对象，每个对象包含选择器和声明对象(CSS规则)。</p>
 <p><img src="http://o7zpnvyhh.bkt.clouddn.com/resolvecss.png" alt="CSS解析过程"></p>
-<p>####脚本和样式处理顺序</p>
-<p>#####脚本:</p>
-<p>同步解析，阻塞浏览器进程。如果是外链脚本，下载过程中会阻塞页面解析，等待脚本下载并执行,原因是脚本文件可能修改HTML文档结构，此时并行执行解析和执行脚本任务有可能会产生冲突，所以执行过程必须要阻塞浏览器进程(页面渲染和DOM树生成)。<br>现代浏览器现在也可以并行下载脚本文件，但是脚本的下载会阻塞其他资源的下载。并行执行问题仍然存在，所以脚本执行仍然会阻塞浏览器进程。<br>defer脚本会在DOM加载完成，onload事件触发前被执行，但是下载仍在解析到script标签时就开始。<br>async脚本异步执行脚本(多个脚本异步执行顺序不一定,onload事件前执行)，同样下载是立即下载<br>动态脚本会立即下载，执行，并且不阻塞浏览器进程。</p>
-<p>####预解析:</p>
-<p>暂时未深入学习</p>
-<p>####样式表:</p>
-<p>应用样式表不会修改DOM树，但是脚本有可能请求样式信息。<br>如果在样式表加载解析过程中，脚本试图获取样式信息就会获得错误信息。<br>所以不同浏览器采用了不同方案阻止这样的情况发生。<br>Firefox在样式表加载解析过程中，禁止脚本。而Webkit则会在尝试获取未加载的样式时，禁止该脚本。</p>
-<p>####渲染树构建:</p>
-<p>DOM树构建同时，渲染树也在进行构建，不同于DOM树的构建，渲染树的节点是根据显示顺序来添加的。</p>
-<p>####渲染树和DOM树关系</p>
-<p>DOM树中display:none的节点和非可视化节点(head等)不会添加到渲染树中，<br>DOM树中一个节点也可能对应多个可视化对象</p>
+<h4 id="脚本和样式处理顺序"><a href="#脚本和样式处理顺序" class="headerlink" title="脚本和样式处理顺序"></a>脚本和样式处理顺序</h4><h5 id="脚本"><a href="#脚本" class="headerlink" title="脚本:"></a>脚本:</h5><p>同步解析，阻塞浏览器进程。如果是外链脚本，下载过程中会阻塞页面解析，等待脚本下载并执行,原因是脚本文件可能修改HTML文档结构，此时并行执行解析和执行脚本任务有可能会产生冲突，所以执行过程必须要阻塞浏览器进程(页面渲染和DOM树生成)。<br>现代浏览器现在也可以并行下载脚本文件，但是脚本的下载会阻塞其他资源的下载。并行执行问题仍然存在，所以脚本执行仍然会阻塞浏览器进程。<br>defer脚本会在DOM加载完成，onload事件触发前被执行，但是下载仍在解析到script标签时就开始。<br>async脚本异步执行脚本(多个脚本异步执行顺序不一定,onload事件前执行)，同样下载是立即下载<br>动态脚本会立即下载，执行，并且不阻塞浏览器进程。</p>
+<h4 id="预解析"><a href="#预解析" class="headerlink" title="预解析:"></a>预解析:</h4><p>暂时未深入学习</p>
+<h4 id="样式表"><a href="#样式表" class="headerlink" title="样式表:"></a>样式表:</h4><p>应用样式表不会修改DOM树，但是脚本有可能请求样式信息。<br>如果在样式表加载解析过程中，脚本试图获取样式信息就会获得错误信息。<br>所以不同浏览器采用了不同方案阻止这样的情况发生。<br>Firefox在样式表加载解析过程中，禁止脚本。而Webkit则会在尝试获取未加载的样式时，禁止该脚本。</p>
+<h4 id="渲染树构建"><a href="#渲染树构建" class="headerlink" title="渲染树构建:"></a>渲染树构建:</h4><p>DOM树构建同时，渲染树也在进行构建，不同于DOM树的构建，渲染树的节点是根据显示顺序来添加的。</p>
+<h4 id="渲染树和DOM树关系"><a href="#渲染树和DOM树关系" class="headerlink" title="渲染树和DOM树关系"></a>渲染树和DOM树关系</h4><p>DOM树中display:none的节点和非可视化节点(head等)不会添加到渲染树中，<br>DOM树中一个节点也可能对应多个可视化对象</p>
 <blockquote>
 <p>例如，“select”元素有 3 个呈现器：一个用于显示区域，一个用于下拉列表框，还有一个用于按钮。如果由于宽度不够，文本无法在一行中显示而分为多行，那么新的行也会作为新的呈现器而添加。<br>格式无效的 HTML。例如:根据 CSS 规范，inline 元素只能包含 block 元素或 inline 元素中的一种。如果出现了混合内容，则应创建匿名的 block 呈现器，以包裹 inline 元素。</p>
 </blockquote>
 <p>DOM树中节点位置可能和渲染树中对应节点位置不同。受float和position属性影响,在渲染树中原位上防止占位帧，真正所在位置才放置实际用于渲染的帧。</p>
-<p>####构建呈现树的流程<br>待学习</p>
-<p>####样式计算</p>
-<p>整合内嵌，行内，外链以及html标签自带属性(转化为对应CSS规则)，同时还有浏览器默认样式，用户自定义样式。<br>样式匹配(选择器匹配):从右向左匹配</p>
-<p>####共享样式数据</p>
-<p>####Firefox规则树<br>Firefox中样式对象保存在类似样式上下文树的树结构中<br>Webkit则只单纯指向此类对象的应用样式。</p>
+<h4 id="构建呈现树的流程"><a href="#构建呈现树的流程" class="headerlink" title="构建呈现树的流程"></a>构建呈现树的流程</h4><p>待学习</p>
+<h4 id="样式计算"><a href="#样式计算" class="headerlink" title="样式计算"></a>样式计算</h4><p>整合内嵌，行内，外链以及html标签自带属性(转化为对应CSS规则)，同时还有浏览器默认样式，用户自定义样式。<br>样式匹配(选择器匹配):从右向左匹配</p>
+<h4 id="共享样式数据"><a href="#共享样式数据" class="headerlink" title="共享样式数据"></a>共享样式数据</h4><h4 id="Firefox规则树"><a href="#Firefox规则树" class="headerlink" title="Firefox规则树"></a>Firefox规则树</h4><p>Firefox中样式对象保存在类似样式上下文树的树结构中<br>Webkit则只单纯指向此类对象的应用样式。</p>
 <p>样式上下文包含 <strong>端值</strong>,<br>需要对所有匹配规则按照正确顺序进行引用，规则树中祖先后代关系使得DOM节点之间可以共享规则。<br>底层节点拥有较高的优先级(与CSS规则层叠有关)<br>树中包含所有规则，<strong>只有当某个节点样式需要计算时才像规则树添加计算路径</strong></p>
-<p>####结构划分</p>
-<p>样式上下文分割为多个结构。结构体中包含特定类别的样式信息。<br>结构中属性均为继承或者均为非继承。可继承属性若在当前节点无定义，则继承自父节点。不可继承属性未定义，则使用默认值。</p>
-<p>####使用规则树计算样式上下文</p>
-<p>计算某个特定元素的样式上下文时，先计算规则树中对应路径。沿着路径应用规则，在新的样式上下文中填充结构。从路径中拥有</p>
+<h4 id="结构划分"><a href="#结构划分" class="headerlink" title="结构划分"></a>结构划分</h4><p>样式上下文分割为多个结构。结构体中包含特定类别的样式信息。<br>结构中属性均为继承或者均为非继承。可继承属性若在当前节点无定义，则继承自父节点。不可继承属性未定义，则使用默认值。</p>
+<h4 id="使用规则树计算样式上下文"><a href="#使用规则树计算样式上下文" class="headerlink" title="使用规则树计算样式上下文"></a>使用规则树计算样式上下文</h4><p>计算某个特定元素的样式上下文时，先计算规则树中对应路径。沿着路径应用规则，在新的样式上下文中填充结构。从路径中拥有</p>
 <p>如果某个元素与其同级元素都指向同一个树节点，则他们会共享整个样式上下文。</p>
-<p>###规则树构建未理解!!!</p>
-<p>####对规则进行处理简化匹配</p>
-<p>样式表解析完毕后，根据 <strong>最右选择器</strong> 将CSS规则添加到多个哈希表中(ID、类、标记、通用)。<br>从哈希表中通过键值提取元素规则即可实现规则匹配。</p>
-<p>####正确层叠顺序应用规则</p>
-<p>样式对象具有与每个可视化属性一一对应的属性。<br>未定义可继承属性可以继承祖先元素样式对象。非继承属性(reseth属性)应用默认值。</p>
-<p>####样式表层叠顺序</p>
-<ol>
+<h3 id="规则树构建未理解"><a href="#规则树构建未理解" class="headerlink" title="规则树构建未理解!!!"></a>规则树构建未理解!!!</h3><h4 id="对规则进行处理简化匹配"><a href="#对规则进行处理简化匹配" class="headerlink" title="对规则进行处理简化匹配"></a>对规则进行处理简化匹配</h4><p>样式表解析完毕后，根据 <strong>最右选择器</strong> 将CSS规则添加到多个哈希表中(ID、类、标记、通用)。<br>从哈希表中通过键值提取元素规则即可实现规则匹配。</p>
+<h4 id="正确层叠顺序应用规则"><a href="#正确层叠顺序应用规则" class="headerlink" title="正确层叠顺序应用规则"></a>正确层叠顺序应用规则</h4><p>样式对象具有与每个可视化属性一一对应的属性。<br>未定义可继承属性可以继承祖先元素样式对象。非继承属性(reseth属性)应用默认值。</p>
+<h4 id="样式表层叠顺序"><a href="#样式表层叠顺序" class="headerlink" title="样式表层叠顺序"></a>样式表层叠顺序</h4><ol>
 <li>浏览器声明</li>
 <li>用户普通声明</li>
 <li>作者普通声明</li>
@@ -1339,34 +1299,25 @@ var reg3 = new RegExp(&quot;\\?&quot;);// \\表示后一个\被转义了，浏�
 <blockquote>
 <p>重要声明： ！important</p>
 </blockquote>
-<p>####特异性(选择器优先级)： <strong>待继续学习 </strong></p>
-<ol>
+<h4 id="特异性-选择器优先级-：-待继续学习"><a href="#特异性-选择器优先级-：-待继续学习" class="headerlink" title="特异性(选择器优先级)： 待继续学习 "></a>特异性(选择器优先级)： <strong>待继续学习 </strong></h4><ol>
 <li>行内样式(标签的style属性)</li>
 <li>ID属性选择器</li>
 <li>类选择器，其他选择器(属性选择器, + ~ 等等)</li>
 <li>元素选择器和伪类选择器</li>
 </ol>
 <p>以上四种产生一个16进制四位数(谷歌似乎有修正)，作为改CSS规则集优先级，在对元素应用样式规则时进行比较。</p>
-<p>####规则排序</p>
-<p>####渐进式处理</p>
-<p>Webkit通过一个标记来表示是否所有顶级样式表均已加载完毕，如果在attach过程中尚未加载完全，则使用占位符并在文档中标注，等加载完毕后重新计算。</p>
-<p>####布局</p>
-<p>渲染树创建完毕后，并不包含位置和大小信息。通过布局(重排)来计算元素的位置大小。</p>
+<h4 id="规则排序"><a href="#规则排序" class="headerlink" title="规则排序"></a>规则排序</h4><h4 id="渐进式处理"><a href="#渐进式处理" class="headerlink" title="渐进式处理"></a>渐进式处理</h4><p>Webkit通过一个标记来表示是否所有顶级样式表均已加载完毕，如果在attach过程中尚未加载完全，则使用占位符并在文档中标注，等加载完毕后重新计算。</p>
+<h4 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h4><p>渲染树创建完毕后，并不包含位置和大小信息。通过布局(重排)来计算元素的位置大小。</p>
 <p>HTML采用流的布局模型，所以大多数情况下一次遍历即可计算出文档布局大小。<br>坐标系相对于根框架建立，采用上左坐标。</p>
-<p>####Dirty位系统</p>
-<p>对某个元素呈现器发生变化做标记，<br>dirty表示当前元素呈现器变化<br>children are dirty表示子树中有元素呈现器变化</p>
-<p>####全局布局和增量布局</p>
-<p>全局布局： 触发了渲染树框架级别的布局变化<br>增量布局： 只对dirty呈现器进行布局。呈现器为dirty时异步触发增量布局。</p>
-<p>####异步布局和同步布局</p>
-<p>增量布局： 异步执行。将dirty呈现器的增量布局任务’reflow’命令加入队列，调度程序每次批量执行命令。</p>
+<h4 id="Dirty位系统"><a href="#Dirty位系统" class="headerlink" title="Dirty位系统"></a>Dirty位系统</h4><p>对某个元素呈现器发生变化做标记，<br>dirty表示当前元素呈现器变化<br>children are dirty表示子树中有元素呈现器变化</p>
+<h4 id="全局布局和增量布局"><a href="#全局布局和增量布局" class="headerlink" title="全局布局和增量布局"></a>全局布局和增量布局</h4><p>全局布局： 触发了渲染树框架级别的布局变化<br>增量布局： 只对dirty呈现器进行布局。呈现器为dirty时异步触发增量布局。</p>
+<h4 id="异步布局和同步布局"><a href="#异步布局和同步布局" class="headerlink" title="异步布局和同步布局"></a>异步布局和同步布局</h4><p>增量布局： 异步执行。将dirty呈现器的增量布局任务’reflow’命令加入队列，调度程序每次批量执行命令。</p>
 <blockquote>
 <p>请求样式信息(元素布局信息,例clientHeight)可同步触发增量布局。</p>
 </blockquote>
 <p>全局布局：同步触发</p>
-<p>####优化</p>
-<p>布局仅仅是大小调整或者呈现器的 <strong>位置</strong>改变而触发，则从缓存中获取呈现器大小，只计算呈现器位置。<br>有时渲染树中的子树变化时，不影响周围元素的布局。所以无需从根节点重新布局。</p>
-<p>####布局处理</p>
-<p>布局处理模式：</p>
+<h4 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h4><p>布局仅仅是大小调整或者呈现器的 <strong>位置</strong>改变而触发，则从缓存中获取呈现器大小，只计算呈现器位置。<br>有时渲染树中的子树变化时，不影响周围元素的布局。所以无需从根节点重新布局。</p>
+<h4 id="布局处理"><a href="#布局处理" class="headerlink" title="布局处理"></a>布局处理</h4><p>布局处理模式：</p>
 <ol>
 <li>父呈现器设置自己的大小</li>
 <li>父呈现器一次处理子呈现器：<ol>
@@ -1377,15 +1328,10 @@ var reg3 = new RegExp(&quot;\\?&quot;);// \\表示后一个\被转义了，浏�
 <li>父呈现器根据子呈现器累加高度(包括内外边距和边框，补白)确定自身高度</li>
 <li>dirty位设置为false</li>
 </ol>
-<p>####宽度计算</p>
-<p>####换行</p>
-<p>如果呈现器在布局过程中需要换行，则立即停止布局，告知祖先需要换行，父元素创建额外呈现器并进行布局。</p>
-<p>####绘制</p>
-<p>遍历渲染树，调用呈现器的paint方法并显示在屏幕上。</p>
-<p>####全局绘制和增量绘制</p>
-<p>部分呈现器变化但不影响整个树，则将其绘制结果(在屏幕上的显示区域)设置为无效，并设置为’dirty区域’。浏览器合并多个’dirty区域’后调用paint。</p>
-<p>####绘制顺序</p>
-<p>即元素进入堆栈样式上下文顺序。</p>
+<h4 id="宽度计算"><a href="#宽度计算" class="headerlink" title="宽度计算"></a>宽度计算</h4><h4 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h4><p>如果呈现器在布局过程中需要换行，则立即停止布局，告知祖先需要换行，父元素创建额外呈现器并进行布局。</p>
+<h4 id="绘制"><a href="#绘制" class="headerlink" title="绘制"></a>绘制</h4><p>遍历渲染树，调用呈现器的paint方法并显示在屏幕上。</p>
+<h4 id="全局绘制和增量绘制"><a href="#全局绘制和增量绘制" class="headerlink" title="全局绘制和增量绘制"></a>全局绘制和增量绘制</h4><p>部分呈现器变化但不影响整个树，则将其绘制结果(在屏幕上的显示区域)设置为无效，并设置为’dirty区域’。浏览器合并多个’dirty区域’后调用paint。</p>
+<h4 id="绘制顺序"><a href="#绘制顺序" class="headerlink" title="绘制顺序"></a>绘制顺序</h4><p>即元素进入堆栈样式上下文顺序。</p>
 <ol>
 <li>背景颜色</li>
 <li>背景图片</li>
@@ -1393,31 +1339,21 @@ var reg3 = new RegExp(&quot;\\?&quot;);// \\表示后一个\被转义了，浏�
 <li>子代</li>
 <li>轮廓</li>
 </ol>
-<p>####Webkit矩形存储</p>
-<p>在重新绘制前，将旧矩形存储为位图，只绘制新旧图之间的差异</p>
-<p>####动态变化</p>
-<p>####呈现引擎的线程</p>
-<p>呈现引擎为单线程，Firefox和Safari中为浏览器主线程，而Chrome中，因为采用一个多核(一个标签页一个进程)，该线程为当前标签的主线程。</p>
-<p>####事件循环</p>
-<p>浏览器主线程为时间循环。是永远处于受理状态的一个无限循环，等待时间发生并处理</p>
-<p>####CSS2可视化模型</p>
-<p>####CSS盒模型</p>
-<p>由内容，内边距，边框，外边距组成。<br>display属性则决定生成的框类型。</p>
-<p>####定位</p>
-<ol>
+<h4 id="Webkit矩形存储"><a href="#Webkit矩形存储" class="headerlink" title="Webkit矩形存储"></a>Webkit矩形存储</h4><p>在重新绘制前，将旧矩形存储为位图，只绘制新旧图之间的差异</p>
+<h4 id="动态变化"><a href="#动态变化" class="headerlink" title="动态变化"></a>动态变化</h4><h4 id="呈现引擎的线程"><a href="#呈现引擎的线程" class="headerlink" title="呈现引擎的线程"></a>呈现引擎的线程</h4><p>呈现引擎为单线程，Firefox和Safari中为浏览器主线程，而Chrome中，因为采用一个多核(一个标签页一个进程)，该线程为当前标签的主线程。</p>
+<h4 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h4><p>浏览器主线程为时间循环。是永远处于受理状态的一个无限循环，等待时间发生并处理</p>
+<h4 id="CSS2可视化模型"><a href="#CSS2可视化模型" class="headerlink" title="CSS2可视化模型"></a>CSS2可视化模型</h4><h4 id="CSS盒模型"><a href="#CSS盒模型" class="headerlink" title="CSS盒模型"></a>CSS盒模型</h4><p>由内容，内边距，边框，外边距组成。<br>display属性则决定生成的框类型。</p>
+<h4 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h4><ol>
 <li>无定位属性或默认定位属性</li>
 <li>浮动</li>
 <li>相对绝对固定定位</li>
 </ol>
 <p>框类型：</p>
 <p>block类型：从上到下布局<br>inline类型：从左到右布局，包含块大小不足以放置下一个inline类型框时，放置到下一行开头，默认(尽量)从包含块顶部开始放置</p>
-<p>####浮动：</p>
-<p>浮动框会移动到行的左边或者右边。会产生环绕效果。脱离普通流。</p>
-<p>####绝对定位和固定定位</p>
-<p>脱离普通流。</p>
+<h4 id="浮动："><a href="#浮动：" class="headerlink" title="浮动："></a>浮动：</h4><p>浮动框会移动到行的左边或者右边。会产生环绕效果。脱离普通流。</p>
+<h4 id="绝对定位和固定定位"><a href="#绝对定位和固定定位" class="headerlink" title="绝对定位和固定定位"></a>绝对定位和固定定位</h4><p>脱离普通流。</p>
 <p>绝对定位元素的位置相对于最近的定位元素(relative,absolute,fixed均可)<br>固定定位位置相对于视口。</p>
-<p>####分层展示</p>
-<p>多个框分散在多个 <strong>堆栈上下文</strong>中,每个堆栈中，先绘制z轴中后面的元素，然后在顶部绘制前面的元素。重叠时，新绘制元素覆盖之前的元素。<br>具有z-index属性框形成本地堆栈。视口具有外部堆栈。<br>即首先看标签顺序，之后看z-index顺序，最后看是否为固定定位。</p>
+<h4 id="分层展示"><a href="#分层展示" class="headerlink" title="分层展示"></a>分层展示</h4><p>多个框分散在多个 <strong>堆栈上下文</strong>中,每个堆栈中，先绘制z轴中后面的元素，然后在顶部绘制前面的元素。重叠时，新绘制元素覆盖之前的元素。<br>具有z-index属性框形成本地堆栈。视口具有外部堆栈。<br>即首先看标签顺序，之后看z-index顺序，最后看是否为固定定位。</p>
 
       
     </div>

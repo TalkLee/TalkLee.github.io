@@ -6,46 +6,40 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>同名标识符优先级讨论 | 行走在web路上</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="####局部变量先使用后声明，不影响外部变量
-var foo = 1;
+  <meta name="description" content="局部变量先使用后声明，不影响外部变量var foo = 1;
 function fn(){
     alert(foo);   // undefined 
     var foo = 2;
 }
 fn();  
 解析:    局部变量声明提前，即是外部变量有值，仍然按照作用域链顺序，获取到局部变量后返回其值
-####形参优先级高于函数名
-function foo(foo) {
-    al">
+形参优先级高于函数名function foo(foo) {
+    alert(foo);">
 <meta property="og:type" content="article">
 <meta property="og:title" content="同名标识符优先级讨论">
 <meta property="og:url" content="http://yoursite.com/2016/05/25/同名标识符优先级讨论/index.html">
 <meta property="og:site_name" content="行走在web路上">
-<meta property="og:description" content="####局部变量先使用后声明，不影响外部变量
-var foo = 1;
+<meta property="og:description" content="局部变量先使用后声明，不影响外部变量var foo = 1;
 function fn(){
     alert(foo);   // undefined 
     var foo = 2;
 }
 fn();  
 解析:    局部变量声明提前，即是外部变量有值，仍然按照作用域链顺序，获取到局部变量后返回其值
-####形参优先级高于函数名
-function foo(foo) {
-    al">
-<meta property="og:updated_time" content="2016-05-25T16:11:13.026Z">
+形参优先级高于函数名function foo(foo) {
+    alert(foo);">
+<meta property="og:updated_time" content="2016-10-07T15:23:51.381Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="同名标识符优先级讨论">
-<meta name="twitter:description" content="####局部变量先使用后声明，不影响外部变量
-var foo = 1;
+<meta name="twitter:description" content="局部变量先使用后声明，不影响外部变量var foo = 1;
 function fn(){
     alert(foo);   // undefined 
     var foo = 2;
 }
 fn();  
 解析:    局部变量声明提前，即是外部变量有值，仍然按照作用域链顺序，获取到局部变量后返回其值
-####形参优先级高于函数名
-function foo(foo) {
-    al">
+形参优先级高于函数名function foo(foo) {
+    alert(foo);">
   
     <link rel="alternative" href="/atom.xml" title="行走在web路上" type="application/atom+xml">
   
@@ -243,22 +237,19 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>####局部变量先使用后声明，不影响外部变量</p>
-<pre><code>var foo = 1;
+        <h4 id="局部变量先使用后声明，不影响外部变量"><a href="#局部变量先使用后声明，不影响外部变量" class="headerlink" title="局部变量先使用后声明，不影响外部变量"></a>局部变量先使用后声明，不影响外部变量</h4><pre><code>var foo = 1;
 function fn(){
     alert(foo);   // undefined 
     var foo = 2;
 }
 fn();  
 </code></pre><p>解析:<br>    局部变量声明提前，即是外部变量有值，仍然按照作用域链顺序，获取到局部变量后返回其值</p>
-<p>####形参优先级高于函数名</p>
-<pre><code>function foo(foo) {
+<h4 id="形参优先级高于函数名"><a href="#形参优先级高于函数名" class="headerlink" title="形参优先级高于函数名"></a>形参优先级高于函数名</h4><pre><code>function foo(foo) {
     alert(foo);   //1
 }
 foo(1);  
 </code></pre><p>解析:<br>    JS解析foo为形参，故输出1，否则输出整个函数</p>
-<p>####形参优先级高于arguments</p>
-<pre><code>function foo(arguments) {
+<h4 id="形参优先级高于arguments"><a href="#形参优先级高于arguments" class="headerlink" title="形参优先级高于arguments"></a>形参优先级高于arguments</h4><pre><code>function foo(arguments) {
     alert(arguments); //1
 }
 foo(1,2);

@@ -284,12 +284,10 @@ alert(obj[&apos;1&apos;]);   //&apos;2&apos;
       
         <p>MDN翻译如下:</p>
 <p>attribute拓展了标签，给标签提供了新的行为或者元数据。attribute总是有着一个键值对的表格，赋予attribute标识符以及相关联的值。</p>
-<p>####property：</p>
-<p><strong>DOM对象</strong>的property值通过点取法获取</p>
+<h4 id="property："><a href="#property：" class="headerlink" title="property："></a>property：</h4><p><strong>DOM对象</strong>的property值通过点取法获取</p>
 <pre><code>document.body.innerHTML;
 </code></pre><p>DOM对象作为对象，可以在脚本中自定义property，而自定义property不出现在html文档中<br>所以，property标识符定义只遵守js标识符命名规范</p>
-<p>####attribute:</p>
-<p><strong>DOM节点</strong>提供以下方法访问attribute(存在兼容问题)</p>
+<h4 id="attribute"><a href="#attribute" class="headerlink" title="attribute:"></a>attribute:</h4><p><strong>DOM节点</strong>提供以下方法访问attribute(存在兼容问题)</p>
 <ul>
 <li>hasAttribute</li>
 <li>getAttribute</li>
@@ -306,8 +304,7 @@ alert(obj[&apos;1&apos;]);   //&apos;2&apos;
 </ul>
 <p>JS中操作DOM对象的property只需要点取法或者下标法即可获取，而除了‘共通属性’外的其他attribute，则只能通过JS自带attribute方法获取。html自定义属性(自定义attribute)也能通过attribute一类方法访问</p>
 <p>常用attriubte中，id、class、title、style等也作为property附加到DOM对象中了</p>
-<p>####特殊‘共通属性’分辨: </p>
-<p>class:</p>
+<h4 id="特殊”共通属性”分辨"><a href="#特殊”共通属性”分辨" class="headerlink" title="特殊”共通属性”分辨:"></a>特殊”共通属性”分辨:</h4><p>class:</p>
 <p> HTML中class作为attribute，在getAttribute等方法中，应该传入’class’(字符串形式)<br> 作为property，由于class为保留字，所以改为className</p>
 <pre><code>alert(test[&apos;class&apos;]);  // 尝试通过property方法获取,失败
 alert(test[&apos;className&apos;]); //property中class正确书写为className
@@ -375,22 +372,19 @@ alert(typeof btn.onclick);   //function
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>####局部变量先使用后声明，不影响外部变量</p>
-<pre><code>var foo = 1;
+        <h4 id="局部变量先使用后声明，不影响外部变量"><a href="#局部变量先使用后声明，不影响外部变量" class="headerlink" title="局部变量先使用后声明，不影响外部变量"></a>局部变量先使用后声明，不影响外部变量</h4><pre><code>var foo = 1;
 function fn(){
     alert(foo);   // undefined 
     var foo = 2;
 }
 fn();  
 </code></pre><p>解析:<br>    局部变量声明提前，即是外部变量有值，仍然按照作用域链顺序，获取到局部变量后返回其值</p>
-<p>####形参优先级高于函数名</p>
-<pre><code>function foo(foo) {
+<h4 id="形参优先级高于函数名"><a href="#形参优先级高于函数名" class="headerlink" title="形参优先级高于函数名"></a>形参优先级高于函数名</h4><pre><code>function foo(foo) {
     alert(foo);   //1
 }
 foo(1);  
 </code></pre><p>解析:<br>    JS解析foo为形参，故输出1，否则输出整个函数</p>
-<p>####形参优先级高于arguments</p>
-<pre><code>function foo(arguments) {
+<h4 id="形参优先级高于arguments"><a href="#形参优先级高于arguments" class="headerlink" title="形参优先级高于arguments"></a>形参优先级高于arguments</h4><pre><code>function foo(arguments) {
     alert(arguments); //1
 }
 foo(1,2);
@@ -702,8 +696,7 @@ for(var i in obj) {
     <div class="article-entry" itemprop="articleBody">
       
         <p>本文讨论面向对象中类的书写方式,暂不考虑类的继承和私有方法属性</p>
-<p>####构造函数方法</p>
-<pre><code>function Person(name) {
+<h4 id="构造函数方法"><a href="#构造函数方法" class="headerlink" title="构造函数方法"></a>构造函数方法</h4><pre><code>function Person(name) {
     this.name = name;
     this.getName = function(){
         return this.name;
@@ -717,8 +710,7 @@ function Person(name) {
     this.name = name;
     this.getName = getName;
 }
-</code></pre><p>####原型方式</p>
-<p>所有对象实例的属性均为共用，无法通过参数对对象实例属性进行定制</p>
+</code></pre><h4 id="原型方式"><a href="#原型方式" class="headerlink" title="原型方式"></a>原型方式</h4><p>所有对象实例的属性均为共用，无法通过参数对对象实例属性进行定制</p>
 <pre><code>function Person() {}  //作为构造函数调用时，返回一个默认对象,包含Object原型对象的所有属性
 Person.prototype.name = &apos;TalkLee&apos;;
 Person.prototype.getName = function(){
@@ -981,8 +973,7 @@ var b = foo(&apos;3&apos;);  //函数调用,两种方法返回结果相同，原
 <pre><code>var a = 1;
 console.log(array[a]);
 </code></pre><p>该例中，a = 1;所以array[a] 等价于 array[‘1’];</p>
-<p>####对象中的键均为字符串类型</p>
-<p>方法3:</p>
+<h4 id="对象中的键均为字符串类型"><a href="#对象中的键均为字符串类型" class="headerlink" title="对象中的键均为字符串类型"></a>对象中的键均为字符串类型</h4><p>方法3:</p>
 <pre><code>for(var i=0,a;a=ary[i++];){  //比较好奇为什么可以不用加终止条件
     alert(i);
     console.log(a);

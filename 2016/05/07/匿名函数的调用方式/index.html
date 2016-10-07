@@ -30,7 +30,7 @@ var ff = function() {
     console.log(&amp;apos;ff&amp;apos;);
 };
 f();  //通过()调用函数">
-<meta property="og:updated_time" content="2016-05-07T14:40:31.726Z">
+<meta property="og:updated_time" content="2016-10-07T15:28:54.204Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="匿名函数的多种调用方式">
 <meta name="twitter:description" content="预备知识:
@@ -248,8 +248,7 @@ var ff = function() {
 f();  //通过()调用函数
 </code></pre><p>function (){ …}();  // SyntaxError: Unexpected token (  </p>
 <p>原因:<br>    javascript解释器会将遇到的function语句看作函数声明语句,而函数声明语句中function后跟函数名，而左括号无法对函数命名，所以就出现了以上的错误。</p>
-<p>###而匿名函数调用方法1 2 通过()实现了立即执行(匿名)函数表达式</p>
-<p>()运算符:</p>
+<h3 id="而匿名函数调用方法1-2-通过-实现了立即执行-匿名-函数表达式"><a href="#而匿名函数调用方法1-2-通过-实现了立即执行-匿名-函数表达式" class="headerlink" title="而匿名函数调用方法1 2 通过()实现了立即执行(匿名)函数表达式"></a>而匿名函数调用方法1 2 通过()实现了立即执行(匿名)函数表达式</h3><p>()运算符:</p>
 <pre><code>JavaScript会将()中内容看作表达式,
 而()操作符的用法如下所示:
 
@@ -310,8 +309,7 @@ true &amp;&amp; function(){ /* code */ }();
 - 返回undefined
 </code></pre><p>(是不是很蛋疼。。。明明直接返回undefined，还要执行getValue)</p>
 <p>getValue(expr)中expr有可能先执行导致对数据产生影响，即使返回了undefined，仍然是有一定副作用的</p>
-<p>####即无论void后面表达式是什么，都返回undefined</p>
-<p>用void的原因在于:<br>    undefined并不是JavaScript保留字，所以可以用undefined来命名变量，也就是undefined可以是任何类型变量的名字，一旦被用来命名<br>而void一定返回undefined值，无论此时上下文的undefined是什么。</p>
+<h4 id="即无论void后面表达式是什么，都返回undefined"><a href="#即无论void后面表达式是什么，都返回undefined" class="headerlink" title="即无论void后面表达式是什么，都返回undefined"></a>即无论void后面表达式是什么，都返回undefined</h4><p>用void的原因在于:<br>    undefined并不是JavaScript保留字，所以可以用undefined来命名变量，也就是undefined可以是任何类型变量的名字，一旦被用来命名<br>而void一定返回undefined值，无论此时上下文的undefined是什么。</p>
 <p>void另一用途:<br>    填写a标签的href属性来阻止点击链接的默认跳转写法如下:</p>
 <pre><code>&lt;a href=&quot;javascript:void(0)&quot;&gt;   //即返回undefined来阻止链接点击的默认事件:跳转
 </code></pre><p>疑似img标签的src属性也可按照此种方法</p>

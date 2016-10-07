@@ -28,7 +28,7 @@ for(var a in array){
 for(var a in array){
     console.log(a); //返回对应元素的下标,即下标即可看作元素作为数组对象的属性
     console.log(array[a]);">
-<meta property="og:updated_time" content="2016-05-15T14:07:01.059Z">
+<meta property="og:updated_time" content="2016-10-07T15:25:10.518Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="遍历数组">
 <meta name="twitter:description" content="严格意义上来说，这篇博客更应该叫数组元素获取的几种方法:
@@ -256,8 +256,7 @@ var _hmt = _hmt || [];
 <pre><code>var a = 1;
 console.log(array[a]);
 </code></pre><p>该例中，a = 1;所以array[a] 等价于 array[‘1’];</p>
-<p>####对象中的键均为字符串类型</p>
-<p>方法3:</p>
+<h4 id="对象中的键均为字符串类型"><a href="#对象中的键均为字符串类型" class="headerlink" title="对象中的键均为字符串类型"></a>对象中的键均为字符串类型</h4><p>方法3:</p>
 <pre><code>for(var i=0,a;a=ary[i++];){  //比较好奇为什么可以不用加终止条件
     alert(i);
     console.log(a);

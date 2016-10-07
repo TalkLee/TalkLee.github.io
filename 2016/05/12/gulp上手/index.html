@@ -26,7 +26,7 @@ gulp.task(taskName, function() {
     //task具体执行的行为
 });
 gulp.task(&amp;apos;default&amp;apos;,function() {">
-<meta property="og:updated_time" content="2016-05-13T03:58:44.398Z">
+<meta property="og:updated_time" content="2016-10-07T15:26:46.990Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="gulp上手">
 <meta name="twitter:description" content="gulp配置文件(gulpfile.js)书写介绍:
@@ -261,15 +261,12 @@ gulp.task(&apos;default&apos;,function() {
 <p>gulp.src(globs[,options])<br>读取文件到流<br>options : 可选参数对象,不常用<br>globs:待读取文件的匹配模式(数组),类似正则表达式匹配,写法参考node-glob写法</p>
 <p>gulp运行流程：<br>先通过src方法返回一个Vinyl file类型的stream,可以通过pipe方法将stream导入到gulp的插件,之后将经过插件处理后的流通过pipe方法导入到gulp.dest()中，dest方法将流生成为导出文件,除此之外还可以将插件处理后的流导入到其他插件中继续处理</p>
 <p>生成的文件路径为dest方法中传入的path路径加上src方法中glob匹配模式中通配符出现后的那部分路径  d，而文件名则由流决定</p>
-<p>###明日更新dest等方法搭配产生的效果</p>
-<p>####Vinyl</p>
-<p>vinyl是一种非常简单的用于描述文件的元数据对象。当我们形容一个文件时,必然包含两个属性: </p>
+<h3 id="明日更新dest等方法搭配产生的效果"><a href="#明日更新dest等方法搭配产生的效果" class="headerlink" title="明日更新dest等方法搭配产生的效果"></a>明日更新dest等方法搭配产生的效果</h3><h4 id="Vinyl"><a href="#Vinyl" class="headerlink" title="Vinyl"></a>Vinyl</h4><p>vinyl是一种非常简单的用于描述文件的元数据对象。当我们形容一个文件时,必然包含两个属性: </p>
 <ul>
 <li>path      路径</li>
 <li>contents  内容<br>这也是vinyl的主要属性,<br>除此之外vinyl并不仅仅描述你电脑文件系统中的文件，还可以是云端上的文件。</li>
 </ul>
-<p>####Vinyl 适配器</p>
-<p>vinyl提供了一种简单的表述文件的方式,但我们还需要一种方式去获取这些vinyl表述的文件,每种文件资源都需要vinyl适配器的存在。而vinyl适配器简单暴露了 <strong>src</strong>和 <strong>dest</strong>方法，以上的两个方法均返回一个stream,src方法返回的流(简称src流)产生Vinyl对象，而dest流则消费Vinyl对象。除此以外，Vinyl适配器还暴露了其他一些方法特定与他们的input/output 媒介，例如vinyl-fs提供的symlink方法</p>
+<h4 id="Vinyl-适配器"><a href="#Vinyl-适配器" class="headerlink" title="Vinyl 适配器"></a>Vinyl 适配器</h4><p>vinyl提供了一种简单的表述文件的方式,但我们还需要一种方式去获取这些vinyl表述的文件,每种文件资源都需要vinyl适配器的存在。而vinyl适配器简单暴露了 <strong>src</strong>和 <strong>dest</strong>方法，以上的两个方法均返回一个stream,src方法返回的流(简称src流)产生Vinyl对象，而dest流则消费Vinyl对象。除此以外，Vinyl适配器还暴露了其他一些方法特定与他们的input/output 媒介，例如vinyl-fs提供的symlink方法</p>
 <p>参考文章:<br> <a href="http://www.cnblogs.com/2050/p/4198792.html" target="_blank" rel="external">无双</a><br> <a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md" target="_blank" rel="external">官方API</a><br><a href="https://github.com/isaacs/node-glob" target="_blank" rel="external">node-glob语法</a></p>
 
       

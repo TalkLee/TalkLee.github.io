@@ -6,43 +6,43 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>objectEqual | 行走在web路上</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="###JS对象的比较
-背景知识：
-####==运算符规则：
-相比较===,==运算符可能会将操作数转化后作比较
+  <meta name="description" content="JS对象的比较背景知识：
+==运算符规则：相比较===,==运算符可能会将操作数转化后作比较
 归纳如下：
 
 存在布尔值，即转化为数字值
 一个数字一个字符串，字符串转化为数字
 一个对象一个非对象，对象转化为基本值( 调用vlaueOf()方法 )，然后使用前面规则做比较
-两操作数均为对象,比较是否为指向同一对象的引用即数字为最高级，布尔值和字符串为同一等级，对象等级最低，操作数从低">
+两操作数均为对象,比较是否为指向同一对象的引用即数字为最高级，布尔值和字符串为同一等级，对象等级最低，操作数从低级到高级转化
+
+其">
 <meta property="og:type" content="article">
 <meta property="og:title" content="objectEqual">
 <meta property="og:url" content="http://yoursite.com/2016/05/06/objectEqual/index.html">
 <meta property="og:site_name" content="行走在web路上">
-<meta property="og:description" content="###JS对象的比较
-背景知识：
-####==运算符规则：
-相比较===,==运算符可能会将操作数转化后作比较
+<meta property="og:description" content="JS对象的比较背景知识：
+==运算符规则：相比较===,==运算符可能会将操作数转化后作比较
 归纳如下：
 
 存在布尔值，即转化为数字值
 一个数字一个字符串，字符串转化为数字
 一个对象一个非对象，对象转化为基本值( 调用vlaueOf()方法 )，然后使用前面规则做比较
-两操作数均为对象,比较是否为指向同一对象的引用即数字为最高级，布尔值和字符串为同一等级，对象等级最低，操作数从低">
-<meta property="og:updated_time" content="2016-05-06T13:15:37.586Z">
+两操作数均为对象,比较是否为指向同一对象的引用即数字为最高级，布尔值和字符串为同一等级，对象等级最低，操作数从低级到高级转化
+
+其">
+<meta property="og:updated_time" content="2016-10-07T15:29:36.796Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="objectEqual">
-<meta name="twitter:description" content="###JS对象的比较
-背景知识：
-####==运算符规则：
-相比较===,==运算符可能会将操作数转化后作比较
+<meta name="twitter:description" content="JS对象的比较背景知识：
+==运算符规则：相比较===,==运算符可能会将操作数转化后作比较
 归纳如下：
 
 存在布尔值，即转化为数字值
 一个数字一个字符串，字符串转化为数字
 一个对象一个非对象，对象转化为基本值( 调用vlaueOf()方法 )，然后使用前面规则做比较
-两操作数均为对象,比较是否为指向同一对象的引用即数字为最高级，布尔值和字符串为同一等级，对象等级最低，操作数从低">
+两操作数均为对象,比较是否为指向同一对象的引用即数字为最高级，布尔值和字符串为同一等级，对象等级最低，操作数从低级到高级转化
+
+其">
   
     <link rel="alternative" href="/atom.xml" title="行走在web路上" type="application/atom+xml">
   
@@ -236,10 +236,8 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>###JS对象的比较</p>
-<p>背景知识：</p>
-<p>####==运算符规则：</p>
-<p>相比较===,==运算符可能会将操作数转化后作比较</p>
+        <h3 id="JS对象的比较"><a href="#JS对象的比较" class="headerlink" title="JS对象的比较"></a>JS对象的比较</h3><p>背景知识：</p>
+<h4 id="运算符规则："><a href="#运算符规则：" class="headerlink" title="==运算符规则："></a>==运算符规则：</h4><p>相比较===,==运算符可能会将操作数转化后作比较</p>
 <p>归纳如下：</p>
 <ol>
 <li>存在布尔值，即转化为数字值</li>
@@ -253,13 +251,12 @@ var _hmt = _hmt || [];
 <li>NaN和任何都不相同</li>
 <li>null和undefined在与其他作比较时，不做转化</li>
 </ul>
-<p>####valueOf方法:</p>
-<p>valueOf通常和toString方法返回值相同</p>
+<h4 id="valueOf方法"><a href="#valueOf方法" class="headerlink" title="valueOf方法:"></a>valueOf方法:</h4><p>valueOf通常和toString方法返回值相同</p>
 <p>以下讨论<strong>toString</strong>方法：</p>
 <p>数组 –&gt; 字符串，与数组调用无参数join方法结果相同<br>逻辑内置对象 –&gt; 字符串，逻辑真变true，假变false<br>Date内置对象 –&gt; 字符串，使用本地时间表示<br>数字内置对象 –&gt; 字符串，参数为表示转化基数，默认为10 </p>
 <pre><code>(155).toString(2)  =&gt; &apos;10011011&apos;
 </code></pre><p>对象字面量或者对象构造函数生成的对象，返回 <strong>[object Object]</strong><br>函数对象返回函数定义(包括函数体)字符串</p>
-<p>####typeof运算符:<br>基本类型返回值:<br>null,undefined,number,string,boolean<br>对象类型：<br>object，function<br>所以，typeof只能检测基本类型值，对于对象类型无法判断是哪类Object</p>
+<h4 id="typeof运算符"><a href="#typeof运算符" class="headerlink" title="typeof运算符:"></a>typeof运算符:</h4><p>基本类型返回值:<br>null,undefined,number,string,boolean<br>对象类型：<br>object，function<br>所以，typeof只能检测基本类型值，对于对象类型无法判断是哪类Object</p>
 <p>代码分析如下:</p>
 <p>1.存在BUG,Function也继承该方法，但是未考虑function的比较，所以是狭义上的object<br>2.没看懂function里面的两个if语句，之后再看</p>
 <pre><code>//添加方法给对象原型,所以比较变量必定为对象

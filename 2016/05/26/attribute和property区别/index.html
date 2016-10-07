@@ -8,29 +8,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="MDN翻译如下:
 attribute拓展了标签，给标签提供了新的行为或者元数据。attribute总是有着一个键值对的表格，赋予attribute标识符以及相关联的值。
-####property：
-DOM对象的property值通过点取法获取
+property：DOM对象的property值通过点取法获取
 document.body.innerHTML;
-DOM对象作为对象，可以在脚本中自定义property，而自定义property不出现在html文档中所以">
+DOM对象作为对象，可以在脚本中自定义property，而自定义property不出现在html文档中所以，prop">
 <meta property="og:type" content="article">
 <meta property="og:title" content="attribute和property区别">
 <meta property="og:url" content="http://yoursite.com/2016/05/26/attribute和property区别/index.html">
 <meta property="og:site_name" content="行走在web路上">
 <meta property="og:description" content="MDN翻译如下:
 attribute拓展了标签，给标签提供了新的行为或者元数据。attribute总是有着一个键值对的表格，赋予attribute标识符以及相关联的值。
-####property：
-DOM对象的property值通过点取法获取
+property：DOM对象的property值通过点取法获取
 document.body.innerHTML;
-DOM对象作为对象，可以在脚本中自定义property，而自定义property不出现在html文档中所以">
-<meta property="og:updated_time" content="2016-05-26T15:46:48.110Z">
+DOM对象作为对象，可以在脚本中自定义property，而自定义property不出现在html文档中所以，prop">
+<meta property="og:updated_time" content="2016-10-07T15:23:21.093Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="attribute和property区别">
 <meta name="twitter:description" content="MDN翻译如下:
 attribute拓展了标签，给标签提供了新的行为或者元数据。attribute总是有着一个键值对的表格，赋予attribute标识符以及相关联的值。
-####property：
-DOM对象的property值通过点取法获取
+property：DOM对象的property值通过点取法获取
 document.body.innerHTML;
-DOM对象作为对象，可以在脚本中自定义property，而自定义property不出现在html文档中所以">
+DOM对象作为对象，可以在脚本中自定义property，而自定义property不出现在html文档中所以，prop">
   
     <link rel="alternative" href="/atom.xml" title="行走在web路上" type="application/atom+xml">
   
@@ -230,12 +227,10 @@ var _hmt = _hmt || [];
       
         <p>MDN翻译如下:</p>
 <p>attribute拓展了标签，给标签提供了新的行为或者元数据。attribute总是有着一个键值对的表格，赋予attribute标识符以及相关联的值。</p>
-<p>####property：</p>
-<p><strong>DOM对象</strong>的property值通过点取法获取</p>
+<h4 id="property："><a href="#property：" class="headerlink" title="property："></a>property：</h4><p><strong>DOM对象</strong>的property值通过点取法获取</p>
 <pre><code>document.body.innerHTML;
 </code></pre><p>DOM对象作为对象，可以在脚本中自定义property，而自定义property不出现在html文档中<br>所以，property标识符定义只遵守js标识符命名规范</p>
-<p>####attribute:</p>
-<p><strong>DOM节点</strong>提供以下方法访问attribute(存在兼容问题)</p>
+<h4 id="attribute"><a href="#attribute" class="headerlink" title="attribute:"></a>attribute:</h4><p><strong>DOM节点</strong>提供以下方法访问attribute(存在兼容问题)</p>
 <ul>
 <li>hasAttribute</li>
 <li>getAttribute</li>
@@ -252,8 +247,7 @@ var _hmt = _hmt || [];
 </ul>
 <p>JS中操作DOM对象的property只需要点取法或者下标法即可获取，而除了‘共通属性’外的其他attribute，则只能通过JS自带attribute方法获取。html自定义属性(自定义attribute)也能通过attribute一类方法访问</p>
 <p>常用attriubte中，id、class、title、style等也作为property附加到DOM对象中了</p>
-<p>####特殊‘共通属性’分辨: </p>
-<p>class:</p>
+<h4 id="特殊”共通属性”分辨"><a href="#特殊”共通属性”分辨" class="headerlink" title="特殊”共通属性”分辨:"></a>特殊”共通属性”分辨:</h4><p>class:</p>
 <p> HTML中class作为attribute，在getAttribute等方法中，应该传入’class’(字符串形式)<br> 作为property，由于class为保留字，所以改为className</p>
 <pre><code>alert(test[&apos;class&apos;]);  // 尝试通过property方法获取,失败
 alert(test[&apos;className&apos;]); //property中class正确书写为className
